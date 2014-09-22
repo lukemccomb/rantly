@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+
+.clearfix:after { clear: both; }
+
+/* ----- =columns ----- */
+
+.one_half { width:460px; }
+.one_third {	 width:300px; }
+.two_third {	 width:620px; }
+.one_fourth {	 width:220px; }
+.three_fourth { width:700px; }
+.full_column {	 width: 100%; }
+
+body {
+  font-family: Helvetica;
+}
+
+.wrapper {
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+header {
+    background-color: #333333;
+    width: 100%;
+}
+
+.main_h1 {
+  font-size: 150%;
+  text-decoration: none;
+  display: inline;
+}
+
+.main_h1_box {
+  border-right: 1px solid lawngreen;
+  width: auto;
+  display: inline-block;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+}
+
+.main_h1:visited {
+  color: white;
+}
+
+.login_link {
+  color: white;
+  font-size: 110%;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.login_link:visited {
+  color: white;
+}
+
+.register_link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
+}
+
+.login_reg {
+  float: right;
+  width: 250px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  display: inline;
+}
+
+.join_box {
+  width: 140px;
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: center;
+}
