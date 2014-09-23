@@ -1,0 +1,145 @@
+/*
+ *
+ *= require_tree .
+ *= require_self
+ */
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+
+.clearfix:after { clear: both; }
+
+/* ----- =columns ----- */
+
+.one_half { width:460px; }
+.one_third {	 width:300px; }
+.two_third {	 width:620px; }
+.one_fourth {	 width:220px; }
+.three_fourth { width:700px; }
+.full_column {	 width: 100%; }
+
+body {
+    font-family: Helvetica;
+}
+
+.wrapper {
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+
+&:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+ }
+
+h1 {
+    font-size: 300%;
+}
+
+.welcome {
+    width: 100%;
+
+.rant-title {
+    padding-top: 15%;
+}
+
+.tagline {
+    padding-top: 5%;
+    font-size: 120%;
+}
+}
+
+.quotes {
+    background-color: dimgrey;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 5%;
+    color: white;
+    height: 350px;
+
+.jeff-thumb {
+    float: left;
+    margin: 3% 1% 0 1%;
+}
+
+.index-quote {
+    text-align: left;
+}
+
+img {
+    width: 35%;
+}
+}
+
+
+}
+
+header {
+    background-color: #333333;
+    width: 100%;
+}
+
+.main_h1 {
+    font-size: 150%;
+    text-decoration: none;
+    display: inline;
+}
+
+.main_h1_box {
+    border-right: 1px solid lawngreen;
+    width: auto;
+    display: inline-block;
+    padding-top: 20px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+
+.main_h1:visited {
+    color: white;
+}
+
+.login_link {
+    color: white;
+    font-size: 110%;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.login_link:visited {
+    color: white;
+}
+
+.register_link {
+    color: white;
+    text-decoration: none;
+    font-size: 130%;
+}
+
+.login_reg {
+    float: right;
+    width: 250px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    display: inline;
+}
+
+.join_box {
+    width: 140px;
+    background-color: green;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    float: right;
+    text-align: center;
+}

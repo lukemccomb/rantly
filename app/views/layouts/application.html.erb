@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <div class="main_h1_box">
+    <%= link_to 'Rant.ly', main_path, class: 'main_h1' %>
+  </div>
+  <div class="login_reg">
+    <%= link_to 'Login', login_path, class: 'login_link' %>
+    <div class="join_box">
+      <%= link_to 'JOIN', register_path, class: 'register_link' %>
+    </div>
+  </div>
+</header>
 
 <%= yield %>
 
