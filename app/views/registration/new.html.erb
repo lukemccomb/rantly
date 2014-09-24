@@ -1,22 +1,55 @@
 <div class="reg-page">
   <div class="reg-window">
-    <h1>Register</h1>
-    <%= form_for @user do |form| %>
-      <%= form.label "Username" %>
-      <%= form.text_field "Username" %>
-      <%= form.label "Password" %>
-      <%= form.text_field "Password" %>
-      <%= form.label "First name" %>
-      <%= form.text_field "First name" %>
-      <%= form.label "Last name" %>
-      <%= form.text_field "Last name" %>
-      <%= form.label "Bio" %>
-      <%= form.text_area "Bio" %>
-      <%= form.label "How often do you rant?" %>
-      <%= radio_button "Daily" %>
-      <%= radio_button "Weekly" %>
-      <%= radio_button "Monthly" %>
-      <%= form.submit "Register" %>
-  <% end %>
+    <%= form_for @user, url: register_path do |form| %>
+      <div class="reg-wrap">
+        <h1>Register</h1>
+
+        <div class="username">
+          <%= form.label "username" %>
+          <br/>
+          <%= form.text_field "username" %>
+        </div>
+        <div class="password">
+          <%= form.label "password_digest", "Password" %>
+          <br/>
+          <%= form.text_field "password_digest" %>
+        </div>
+        <div class="first-n">
+          <%= form.label "first_name" %>
+          <br/>
+          <%= form.text_field "first_name" %>
+        </div>
+        <div class="last-n">
+          <%= form.label "last_name" %>
+          <br/>
+          <%= form.text_field "last_name" %>
+        </div>
+        <div class="bio-field">
+          <%= form.label "bio" %>
+          <br/>
+          <%= form.text_area "bio" %>
+        </div>
+        <br/>
+        <%= form.label "How often do you rant?" %>
+        <br/>
+
+        <div class="daily">
+          <input id="daily" value="daily" type="radio"/>
+          <label for="daily">Daily</label>
+        </div>
+        <div class="weekly">
+          <input value="Weekly" type="radio"/>
+          <label value="weekly" for="weekly">Weekly</label>
+        </div>
+        <div class="monthly">
+          <input value="monthly" type="radio"/>
+          <label id="monthly" for="monthly">Monthly</label>
+        </div>
+        <br/>
+      </div>
+      <div class="reg-button">
+        <%= form.submit "REGISTER" %>
+      </div>
+    <% end %>
   </div>
 </div>
