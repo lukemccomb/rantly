@@ -42,18 +42,18 @@ body {
  }
 
 h1 {
-    font-size: 300%;
+    font-size: 500%;
 }
 
 .welcome {
     width: 100%;
 
 .rant-title {
-    padding-top: 15%;
+    padding-top: 7.5%;
 }
 
 .tagline {
-    padding-top: 5%;
+    padding-top: 2%;
     font-size: 120%;
 }
 }
@@ -65,7 +65,7 @@ h1 {
     bottom: 0;
     padding: 5%;
     color: white;
-    height: 350px;
+    height: 30%;
 
 .jeff-thumb {
     float: left;
@@ -168,7 +168,7 @@ header {
 }
 
 .username, .password, .first-n, .last-n {
-  width: 45%;
+  width: 49%;
   display: inline-block;
   margin-top: 2%;
 
@@ -178,7 +178,7 @@ header {
 }
 
 .bio-field {
-  width: 82%;
+  width: 89%;
   margin-top: 2%;
 
   textarea {
@@ -189,14 +189,14 @@ header {
 
 .reg-wrap {
   padding-top: 3%;
-  padding-left: 12.5%;
+  padding-left: 9.5%;
   width: auto;
   margin: 0 auto;
 }
 
 .daily, .weekly, .monthly {
   display: inline-block;
-  width: 30%;
+  width: 32.5%;
   padding-top: 3%;
 }
 
