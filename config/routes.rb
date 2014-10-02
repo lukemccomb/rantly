@@ -2,14 +2,11 @@ Rails.application.routes.draw do
 
   root "main#index", as: :main
 
-  get "signin" => "sessions#new", as: :login
+  get "/dashboard" => "dashboard#dashboard"
 
-  post "signin" => "sessions#create"
+  resource :session, only: [:new, :create, :destroy]
 
-  get "register" => "users#new", as: :register
+  resources :users, only: [:new, :create]
 
-  post "register" => "register#create"
-
-  resources :users
 
 end

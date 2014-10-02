@@ -1,1 +1,23 @@
-<!-- login / new session path -->
+<div class="login-page">
+  <div class="login-window">
+    <div class="login-wrap">
+    <%= form_for(:session, url: session_path) do |form| %>
+      <h1>Login</h1>
+      <div class="username">
+        <%= form.label "username" %>
+        <br/>
+        <%= form.text_field "username" %>
+      </div>
+      <br/>
+      <div class="password">
+        <%= form.label "password_digest", "Password" %>
+        <br/>
+        <%= form.password_field "password_digest" %>
+      </div>
+      <div class="login-button">
+        <%= form.submit "LOGIN" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
