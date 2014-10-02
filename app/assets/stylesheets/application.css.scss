@@ -170,7 +170,7 @@ header {
   left: 25%;
   background-color: white;
   height: auto;
-}
+
 
 .username, .password, .first-n, .last-n {
   width: 49%;
@@ -180,6 +180,7 @@ header {
   input {
     width: 80%;
   }
+}
 }
 
 .bio-field {
@@ -249,7 +250,6 @@ p {
 
 .login-wrap {
   padding-top: 3%;
-  padding-left: 6%;
   width: 100%;
   margin: 0 auto;
   text-align: left;
@@ -266,12 +266,36 @@ p {
   background-color: white;
   min-height: 170px;
   height: 35%;
-  
+
   form {
     height: 100%;
     width: 100%;
     display: inline-block;
+    .username, .password, h1 {
+      width: 49%;
+      display: inline-block;
+      margin-top: 2%;
+      padding-left: 5%;
+      input {
+        width: 180%;
+      }
+    }
+    .login-button {
+      width: 100%;
+      border-top: 1px solid black;
+      margin-top: 3%;
+      text-align: center;
 
+      input {
+        width: 80%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: #227000;
+        border-radius: 5px;
+        color: white;
+        font-size: 120%;
+      }
+    }
   }
 }
 
