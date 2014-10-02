@@ -47,6 +47,7 @@ h1 {
 
 .welcome {
     width: 100%;
+    position: relative;
 
 .rant-title {
     padding-top: 7.5%;
@@ -59,71 +60,75 @@ h1 {
 }
 
 .quotes {
-    background-color: dimgrey;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    padding: 5%;
-    color: white;
-    height: 30%;
+  background-color: dimgrey;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5%;
+  color: white;
+  height: 55%;
 
-.jeff-thumb {
+  .jeff-thumb {
     float: left;
-    margin: 3% 1% 0 1%;
-}
+    margin: 0 .1% 0 1%;
+    height: 100%;
+    width: 30%;
+  }
 
-.index-quote {
+  .index-quote {
     text-align: left;
-}
+    height: 100%;
+    width: 100%;
+  }
 
-img {
-    width: 35%;
-}
+  img {
+    width: 45%;
+  }
 }
 
 
 }
 
 header {
-    background-color: #333333;
-    width: 100%;
+  background-color: #333333;
+  width: 100%;
 }
 
 .main_h1 {
-    font-size: 150%;
-    text-decoration: none;
-    display: inline;
+  font-size: 150%;
+  text-decoration: none;
+  display: inline;
 }
 
 .main_h1_box {
-    border-right: 1px solid lawngreen;
-    width: auto;
-    display: inline-block;
-    padding-top: 20px;
-    padding-right: 25px;
-    padding-bottom: 20px;
-    padding-left: 25px;
+  border-right: 1px solid lawngreen;
+  width: auto;
+  display: inline-block;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  padding-left: 25px;
 }
 
 .main_h1:visited {
-    color: white;
+  color: white;
 }
 
 .login_link {
-    color: white;
-    font-size: 110%;
-    margin-top: 15px;
-    display: inline-block;
+  color: white;
+  font-size: 110%;
+  margin-top: 15px;
+  display: inline-block;
 }
 
 .login_link:visited {
-    color: white;
+  color: white;
 }
 
 .register_link {
-    color: white;
-    text-decoration: none;
-    font-size: 130%;
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
 }
 
 .login_reg {
@@ -215,4 +220,29 @@ header {
     color: white;
     font-size: 120%;
   }
+}
+
+p {
+  width: 80%;
+}
+
+.flash-reg {
+  margin: 0 auto 0 auto;
+  width: auto;
+  background-color: green;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+  font-size: 130%;
+  p {
+    text-align: center;
+    display: inline;
+  }
+}
+
+.bottom-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 55%;
 }

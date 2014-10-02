@@ -12,7 +12,7 @@
         <div class="password">
           <%= form.label "password_digest", "Password" %>
           <br/>
-          <%= form.text_field "password_digest" %>
+          <%= form.password_field "password_digest" %>
         </div>
         <div class="first-n">
           <%= form.label "first_name" %>
@@ -30,20 +30,19 @@
           <%= form.text_area "bio" %>
         </div>
         <br/>
-        <%= form.label "How often do you rant?" %>
+        <p>How often do you rant?</p>
         <br/>
-
         <div class="daily">
-          <input id="daily" value="daily" type="radio"/>
-          <label for="daily">Daily</label>
+          <%= form.radio_button(:rate, "daily") %>
+          <%= form.label(:rate_daily, "Daily") %>
         </div>
         <div class="weekly">
-          <input value="Weekly" type="radio"/>
-          <label value="weekly" for="weekly">Weekly</label>
+          <%= form.radio_button(:rate, "weekly") %>
+          <%= form.label(:rate_weekly, "Weekly") %>
         </div>
         <div class="monthly">
-          <input value="monthly" type="radio"/>
-          <label id="monthly" for="monthly">Monthly</label>
+          <%= form.radio_button(:rate, "monthly") %>
+          <%= form.label(:rate_monthly, "Monthly") %>
         </div>
         <br/>
       </div>
