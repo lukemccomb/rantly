@@ -1,15 +1,12 @@
 class ApplicationController < ActionController::Base
 
   def current_user
-    if cookies[:user_id]
-      user_id = cookies.signed[:user_id]
-      User.find(user_id)
-    end
+    User.find_by(id: session[:user_id])
   end
   helper_method :current_user
 
   def sign_in user
-    cookies.signed[:user_id] = user.id
+    session[:user_id] = user.id
   end
 
 end

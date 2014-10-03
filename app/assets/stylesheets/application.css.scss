@@ -264,7 +264,7 @@ p {
   top: 10%;
   left: 25%;
   background-color: white;
-  min-height: 170px;
+  min-height: 210px;
   height: 35%;
 
   form {
@@ -287,8 +287,9 @@ p {
       text-align: center;
 
       input {
-        width: 80%;
-        margin-top: 5%;
+        width: 90%;
+        margin-top: 2%;
+        margin-top-min: 10px;
         margin-bottom: 5%;
         background-color: #227000;
         border-radius: 5px;
@@ -314,4 +315,33 @@ p {
     text-align: center;
     font-size: 400%;
   }
+}
+
+.logout {
+  float: right;
+  width: 250px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  display: inline;
+}
+
+.logout-box {
+  width: 140px;
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: center;
+}
+
+.logout-link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
 }

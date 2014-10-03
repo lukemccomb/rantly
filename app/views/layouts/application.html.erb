@@ -11,10 +11,16 @@
   <div class="main_h1_box">
     <%= link_to 'Rant.ly', main_path, class: 'main_h1' %>
   </div>
-  <div class="login_reg">
-    <%= link_to 'Login', new_session_path, class: 'login_link' %>
-    <%= link_to 'JOIN', new_user_path, class: 'register_link join_box' %>
-  </div>
+  <% unless current_user %>
+    <div class="login_reg">
+      <%= link_to 'Login', new_session_path, class: 'login_link' %>
+      <%= link_to 'JOIN', new_user_path, class: 'register_link join_box' %>
+    </div>
+  <% else %>
+    <div class="logout">
+      <%= link_to 'LOGOUT', session_path, method: :delete, class: 'logout-box logout-link' %>
+    </div>
+  <% end %>
 </header>
 
 <%= yield %>
