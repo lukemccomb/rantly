@@ -21,10 +21,4 @@ class SessionsController < ApplicationController
     redirect_to :main
   end
 
-  private
-
-  def allowed_params
-    params.require(:user).permit(:username, :password)
-  end
-
 end
