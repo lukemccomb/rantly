@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
   def dashboard
     @user = current_user
     @fullname = full_name(current_user)
+    @rant = Rant.new
   end
 
   private

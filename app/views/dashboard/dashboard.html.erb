@@ -1,3 +1,25 @@
 <div class="dash-wrap">
-  <h1>Welcome <%= link_to @fullname, edit_user_path(:id) %></h1>
+  <div class="new-rant-wrap">
+    <div class="thumbnail">
+      <%= image_tag 'jeff.jpg' %>
+      <h3 class="username"><%= @fullname %></h3>
+    </div>
+    <hr/>
+    <div class="rant-form">
+      <%= form_for @rant do |form| %>
+        <%= form.label :title, "A rant about" %>
+        <br/>
+        <%= form.text_field :title %>
+        <br/>
+        <%= form.label :rant, "Rant"  %>
+        <br/>
+        <%= form.text_area :rant %>
+        <br/>
+        <%= form.submit "Rant" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="rant-feed">
+    <h1>Welcome <%= link_to @fullname, edit_user_path(:id) %></h1>
+  </div>
 </div>
