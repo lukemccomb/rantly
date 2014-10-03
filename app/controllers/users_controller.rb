@@ -14,6 +14,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(allowed_params)
+    redirect_to "/dashboard"
+  end
+
   private
 
   def allowed_params

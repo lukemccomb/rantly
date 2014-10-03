@@ -1,0 +1,54 @@
+<div class="reg-page">
+  <div class="reg-window">
+    <%= form_for @user, method: :patch do |form| %>
+      <div class="reg-wrap">
+        <h1>Edit Profile</h1>
+
+        <div class="username">
+          <%= form.label :username %>
+          <br/>
+          <%= form.text_field :username %>
+        </div>
+        <div class="password">
+          <%= form.label :password, "Password" %>
+          <br/>
+          <%= form.password_field :password %>
+        </div>
+        <div class="first-n">
+          <%= form.label :first_name %>
+          <br/>
+          <%= form.text_field :first_name %>
+        </div>
+        <div class="last-n">
+          <%= form.label :last_name %>
+          <br/>
+          <%= form.text_field :last_name %>
+        </div>
+        <div class="bio-field">
+          <%= form.label :bio %>
+          <br/>
+          <%= form.text_area :bio %>
+        </div>
+        <br/>
+        <p>How often do you rant?</p>
+        <br/>
+        <div class="daily">
+          <%= form.radio_button(:rate, "daily") %>
+          <%= form.label(:rate_daily, "Daily") %>
+        </div>
+        <div class="weekly">
+          <%= form.radio_button(:rate, "weekly") %>
+          <%= form.label(:rate_weekly, "Weekly") %>
+        </div>
+        <div class="monthly">
+          <%= form.radio_button(:rate, "monthly") %>
+          <%= form.label(:rate_monthly, "Monthly") %>
+        </div>
+        <br/>
+      </div>
+      <div class="reg-button">
+        <%= form.submit "UPDATE" %>
+      </div>
+    <% end %>
+  </div>
+</div>
