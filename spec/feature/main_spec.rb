@@ -16,7 +16,7 @@ feature "index page" do
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
     fill_in "First name", with: "sample"
-    fill_in "Last name", with: "sample"
+    fill_in "Last name", with: "user"
     fill_in "Bio", with: "sample bio"
     choose('Weekly')
     click_on "REGISTER"
@@ -29,11 +29,15 @@ feature "index page" do
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
     fill_in "First name", with: "sample"
-    fill_in "Last name", with: "sample"
+    fill_in "Last name", with: "user"
     fill_in "Bio", with: "sample bio"
     choose('Weekly')
     click_on "REGISTER"
-    expect(page).to have_content("Thank you for registering! Please log in to begin ranting.")
+    click_on "Login"
+    fill_in "Username", with: "user"
+    fill_in "Password", with: "password"
+    click_on "LOGIN"
+    expect(page).to have_content("Welcome sample user")
   end
 
 end
