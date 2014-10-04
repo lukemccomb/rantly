@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(allowed_params)
     if @user.save!
       redirect_to "/"
-      flash[:notice] = "Thank you for registering! Please log in to being ranting."
+      flash[:notice] = "Thank you for registering! Please log in to begin ranting."
     else
       render "users/new"
     end
