@@ -34,6 +34,12 @@ feature "index page" do
     expect(page).to have_content("sample user")
   end
 
+  scenario "user sees error message when login fails" do
+    click_on "Login"
+    click_on "LOGIN"
+    expect(page).to have_content("Username / password is invalid")
+  end
+
   scenario "Logged in user can log out" do
     click_on "Login"
     fill_in "Username", with: "user"

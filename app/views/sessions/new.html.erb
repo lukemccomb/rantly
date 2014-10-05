@@ -1,6 +1,11 @@
 <div class="login-page">
   <div class="login-window">
     <div class="login-wrap">
+      <% @user.errors.full_messages.each do |error| %>
+        <div class="errors">
+          <%= error %>
+        </div>
+      <% end %>
     <%= form_for(@user, url: session_path) do |form| %>
       <h1>Login</h1>
       <div class="username">
