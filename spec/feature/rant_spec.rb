@@ -27,7 +27,12 @@ feature "index page" do
     expect(page).to have_content("My Rants first rant This is the first rant!")
   end
 
-
-
+  scenario "user can delete their own rants" do
+    fill_in "A rant about", with: "first rant"
+    fill_in "Rant", with: "This is the first rant!"
+    click_on "RANT"
+    click_on "DELETE"
+    expect(page).to_not have_content("My Rants first rant This is the first rant!")
+  end
 
 end

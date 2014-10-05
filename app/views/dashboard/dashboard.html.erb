@@ -31,6 +31,10 @@
           <p><%= rant.title %></p>
 
           <p><%= rant.rant %></p>
+          <br/>
+          <% if rant.user_id == current_user.id %>
+          <%= button_to "DELETE", user_rant_path(@user, rant.id), method: :delete, html: { class: "delete"} %>
+          <% end %>
         <% end %>
       <% end %>
     </div>

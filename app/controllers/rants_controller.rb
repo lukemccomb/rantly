@@ -17,6 +17,12 @@ class RantsController < ApplicationController
 
   end
 
+  def destroy
+    @rant = Rant.find_by(id: params[:id])
+    @rant.destroy
+    redirect_to "/dashboard"
+  end
+
   private
 
   def allowed_params
