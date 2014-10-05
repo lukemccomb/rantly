@@ -2,7 +2,7 @@
   <div class="new-rant-wrap">
     <div class="thumbnail">
       <%= image_tag 'jeff.jpg' %>
-      <h3 class="username"><%= @fullname %></h3>
+      <h3 class="username"><%= link_to @fullname, edit_user_path(:id) %></h3>
     </div>
     <hr/>
     <div class="rant-form">
@@ -20,8 +20,6 @@
     </div>
   </div>
   <div class="rant-feed">
-    <h1>Welcome <%= link_to @fullname, edit_user_path(:id) %></h1>
-
     <div class="user-rants">
 
       <% if @user_rants.length > 0 %>

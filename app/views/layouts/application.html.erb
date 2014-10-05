@@ -17,6 +17,12 @@
       <%= link_to 'JOIN', new_user_path, class: 'register_link join_box' %>
     </div>
   <% else %>
+    <div class="main-nav">
+      <%= link_to "Dashboard" %> |
+      <%= link_to "Following" %> |
+      <%= link_to "Favorites" %> |
+      <%= link_to "Search" %>
+    </div>
     <div class="logout">
       <%= link_to 'LOGOUT', session_path, method: :delete, class: 'logout-box logout-link' %>
     </div>
