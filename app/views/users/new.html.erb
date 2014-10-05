@@ -6,31 +6,37 @@
 
         <div class="username">
           <%= form.label :username %>
+          <%= @user.errors.full_messages_for(:username).first %>
           <br/>
           <%= form.text_field :username %>
         </div>
         <div class="password">
           <%= form.label :password %>
+          <%= @user.errors.full_messages_for(:password).first %>
           <br/>
           <%= form.password_field :password %>
         </div>
         <div class="first-n">
           <%= form.label :first_name %>
+          <%= @user.errors.full_messages_for(:first_name).first %>
           <br/>
           <%= form.text_field :first_name %>
         </div>
         <div class="last-n">
           <%= form.label :last_name %>
+          <%= @user.errors.full_messages_for(:last_name).first %>
           <br/>
           <%= form.text_field :last_name %>
         </div>
         <div class="bio-field">
           <%= form.label :bio %>
+          <%= @user.errors.full_messages_for(:bio).first %>
           <br/>
           <%= form.text_area :bio %>
         </div>
         <br/>
-        <p>How often do you rant?</p>
+        <p><%= form.label :rate, "How often do you rant?" %></p>
+        <%= @user.errors.full_messages_for(:rate).first %>
         <br/>
         <div class="daily">
           <%= form.radio_button(:rate, "daily") %>

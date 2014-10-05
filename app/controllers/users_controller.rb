@@ -6,11 +6,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(allowed_params)
-    if @user.save!
+    if @user.save
       redirect_to "/"
       flash[:notice] = "Thank you for registering! Please log in to begin ranting."
     else
-      render "users/new"
+      render :new
     end
   end
 

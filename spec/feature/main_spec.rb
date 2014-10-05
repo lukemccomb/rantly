@@ -26,6 +26,22 @@ feature "index page" do
     expect(page).to have_content("Thank you for registering! Please log in to begin ranting.")
   end
 
+  scenario "anonymous sees registration errors when registration fails" do
+    click_on "JOIN"
+    click_on "REGISTER"
+    expect(page).to have_content("Username Username can't be blank")
+    expect(page).to have_content("Password Password can't be blank")
+    expect(page).to have_content("First name First name can't be blank")
+    expect(page).to have_content("Last name Last name can't be blank")
+    expect(page).to have_content("Bio Bio can't be blank")
+    expect(page).to have_content("How often do you rant? Rate can't be blank")
+    fill_in "Username", with: "user"
+    fill_in "Password", with: "pass"
+    click_on "REGISTER"
+    expect(page).to have_content("Username has already been taken")
+    expect(page).to have_content("Password is too short (minimum is 8 characters)")
+  end
+
   scenario "Registered user can login" do
     click_on "Login"
     fill_in "Username", with: "user"
