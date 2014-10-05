@@ -21,6 +21,15 @@
   </div>
   <div class="rant-feed">
     <div class="user-rants">
+      <% if @all_rants.length > 0 %>
+        <h1>Latest Rants</h1>
+        <% @all_rants.each do |rant| %>
+          <hr/>
+          <p><%= rant.user.first_name %> <%= rant.user.last_name %></p>
+          <p><%= rant.title %></p>
+          <p><%= rant.rant %></p>
+        <% end %>
+      <% end %>
 
       <% if @user_rants.length > 0 %>
         <h1>My Rants</h1>

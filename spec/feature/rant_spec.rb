@@ -35,4 +35,27 @@ feature "index page" do
     expect(page).to_not have_content("My Rants first rant This is the first rant!")
   end
 
+  scenario "user can see other user's rants under Latest Rants section" do
+    fill_in "A rant about", with: "first rant"
+    fill_in "Rant", with: "This is the first rant!"
+    click_on "RANT"
+    expect(page).to have_content("My Rants first rant This is the first rant!")
+    click_on  "LOGOUT"
+    expect(page).to have_content("Rantly Let it all out")
+    click_on "JOIN"
+    fill_in "Username", with: "user2"
+    fill_in "Password", with: "password"
+    fill_in "First name", with: "sample2"
+    fill_in "Last name", with: "user2"
+    fill_in "Bio", with: "sample bio2"
+    choose('Daily')
+    click_on "REGISTER"
+    click_on "Login"
+    fill_in "Username", with: "user2"
+    fill_in "Password", with: "password"
+    click_on "LOGIN"
+    expect(page).to have_content("sample2 user2")
+    expect(page).to have_content("Latest Rants sample user first rant This is the first rant!")
+  end
+
 end

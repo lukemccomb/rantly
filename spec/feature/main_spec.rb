@@ -31,7 +31,7 @@ feature "index page" do
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
     click_on "LOGIN"
-    expect(page).to have_content("Welcome sample user")
+    expect(page).to have_content("sample user")
   end
 
   scenario "Logged in user can log out" do
