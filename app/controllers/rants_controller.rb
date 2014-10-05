@@ -5,7 +5,22 @@ class RantsController < ApplicationController
   end
 
   def create
+    @rant = Rant.new(allowed_params)
+    @rant.user_id = current_user.id
+    if @rant.save!
+      flash[:new_rant]
+      redirect_to "/dashboard"
+    else
+      @rant.errors
+      redirect_to "/dashboard"
+    end
 
+  end
+
+  private
+
+  def allowed_params
+    params.require(:rant).permit(:title, :rant)
   end
 
 

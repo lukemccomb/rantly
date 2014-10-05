@@ -1,9 +1,10 @@
 class DashboardController < ApplicationController
 
   def dashboard
+    @new_rant = Rant.new
     @user = current_user
     @fullname = full_name(current_user)
-    @rant = Rant.new
+    @user_rants = Rant.where(user_id: @user.id)
   end
 
   private

@@ -6,20 +6,33 @@
     </div>
     <hr/>
     <div class="rant-form">
-      <%= form_for @rant do |form| %>
+      <%= form_for [@user, @new_rant] do |form| %>
         <%= form.label :title, "A rant about" %>
         <br/>
         <%= form.text_field :title %>
         <br/>
-        <%= form.label :rant, "Rant"  %>
+        <%= form.label :rant, "Rant" %>
         <br/>
         <%= form.text_area :rant %>
         <br/>
-        <%= form.submit "Rant" %>
+        <%= form.submit "RANT" %>
       <% end %>
     </div>
   </div>
   <div class="rant-feed">
     <h1>Welcome <%= link_to @fullname, edit_user_path(:id) %></h1>
+
+    <div class="user-rants">
+
+      <% if @user_rants.length > 0 %>
+        <h1>My Rants</h1>
+        <% @user_rants.each do |rant| %>
+          <hr/>
+          <p><%= rant.title %></p>
+
+          <p><%= rant.rant %></p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -19,8 +19,12 @@ feature "index page" do
     click_on "LOGIN"
   end
 
-  scenario "Loggedin user sees place post a rant" do
+  scenario "Logged-in user can post a rant" do
     expect(page).to have_content("A rant about Rant")
+    fill_in "A rant about", with: "first rant"
+    fill_in "Rant", with: "This is the first rant!"
+    click_on "RANT"
+    expect(page).to have_content("My Rants first rant This is the first rant!")
   end
 
 
