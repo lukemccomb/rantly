@@ -8,7 +8,7 @@
     <div class="rant-form">
       <%= form_for [@user, @new_rant] do |form| %>
         <%= form.label :title, "A rant about" %>
-        <%= @new_rant.errors.full_messages_for(:title).first %>
+        <%= @new_rant.errors.full_messages %>
         <br/>
         <%= form.text_field :title %>
         <br/>
