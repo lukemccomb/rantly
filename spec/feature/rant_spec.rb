@@ -27,6 +27,16 @@ feature "index page" do
     expect(page).to have_content("My Rants first rant This is the first rant!")
   end
 
+  scenario "user sees rant validation error messages when rant post fails" do
+    click_on "RANT"
+    expect(page).to have_content("Title is required")
+    expect(page).to have_content("Rant is required")
+    fill_in "A rant about", with: "first"*11
+    fill_in "Rant", with: "This is the first rant!"
+    expect(page).to have_content("Title must be less than 50 characters")
+    expect(page).to have_content("Rant must be greater than 140 characters")
+  end
+
   scenario "user can delete their own rants" do
     fill_in "A rant about", with: "first rant"
     fill_in "Rant", with: "This is the first rant!"

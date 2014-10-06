@@ -7,11 +7,10 @@ class RantsController < ApplicationController
   def create
     @rant = Rant.new(allowed_params)
     @rant.user_id = current_user.id
-    if @rant.save!
+    if @rant.save
       flash[:new_rant]
       redirect_to "/dashboard"
     else
-      @rant.errors
       redirect_to "/dashboard"
     end
 
