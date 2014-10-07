@@ -82,14 +82,14 @@
         <color>3355443</color>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Link" x="905" y="319" w="-1" h="-1" measuredW="60" measuredH="19" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Link" x="887" y="319" w="-1" h="-1" measuredW="78" measuredH="19" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Unfavorite</text>
+        <text>1%20-%20Unfavorite</text>
       </controlProperties>
     </control>
-    <control controlID="32" controlTypeID="com.balsamiq.mockups::Link" x="918" y="466" w="-1" h="-1" measuredW="47" measuredH="19" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Link" x="889" y="466" w="-1" h="-1" measuredW="75" measuredH="19" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Favorite</text>
+        <text>45%20-%20Favorite</text>
       </controlProperties>
     </control>
     <control controlID="33" controlTypeID="com.balsamiq.mockups::Link" x="354" y="312" w="-1" h="-1" measuredW="36" measuredH="19" zOrder="17" locked="false" isInGroup="-1">

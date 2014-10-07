@@ -1,0 +1,45 @@
+Id,Title,Labels,Iteration,Iteration Start,Iteration End,Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Owned By
+80161076,"As a user, when I click the Rantly logo, it takes me to the dashboard","",,,,feature,1,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80161076,
+79985724,"As a user, when I'm viewing a rant, I see how many people have favorited that rant","",,,,feature,1,unstarted,"Oct 2, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/79985724,
+79985826,"As a user, I can comment on a rant","",,,,feature,2,unstarted,"Oct 2, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/79985826,
+80133990,"As a user, when I follow a user, this is done with AJAX","",,,,feature,3,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80133990,
+80133968,"As a user, when I favorite a rant, this is done with AJAX","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,"The favorite count should update automatically
+",https://www.pivotaltracker.com/story/show/80133968,
+80134060,"As a user, when I ""Rant"" this is done with AJAX and shows the appropriate errors.","",,,,feature,3,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80134060,
+79985654,"As a user, when I'm viewing a list of rants, it's truncated at 300 words","",,,,feature,1,unstarted,"Oct 2, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/79985654,
+80130298,"As a user, I can tweet a link to a rant.","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,"Auto fills text for twitter with tweet title and link to tweet
+",https://www.pivotaltracker.com/story/show/80130298,
+80130050,"As a user, I can mark a rant as spam","",,,,feature,1,unstarted,"Oct 6, 2014",,,Jeff Taggart,It disappears but is not deleted.,https://www.pivotaltracker.com/story/show/80130050,
+80130438,"As an admin user, when I log in, I see a list of all rants in the system ordered by date","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,Admin have a different view. Only admins are allowed to see this view,https://www.pivotaltracker.com/story/show/80130438,
+80129962,"As an admin user, I can see a list of users.","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,I can see the number of rants they've made,https://www.pivotaltracker.com/story/show/80129962,
+80168790,"As an admin user, I can sort users by the number of rants","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80168790,
+80130464,"As an admin user, I can search for rants within a specific date range","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,each side is optional. For example: I can search for rants before X date or rants after Y date,https://www.pivotaltracker.com/story/show/80130464,
+80130084,"As an admin user, I can view spam and resolve or delete those rants","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,"Resolve puts it back,
+Delete deletes",https://www.pivotaltracker.com/story/show/80130084,
+80129990,"As an admin user, I can disable a user to prevent login","",,,,feature,1,unstarted,"Oct 6, 2014",,,Jeff Taggart,"User receives a ""Your account has been disabled"" flash.",https://www.pivotaltracker.com/story/show/80129990,
+80218492,"As a user, I can comment on a user's profile","",,,,feature,2,unstarted,"Oct 7, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80218492,
+79843896,"As a user, I can search by a hashtag by clicking on a hashtag within a rant body or title","",,,,feature,3,unstarted,"Oct 1, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/79843896,
+79985684,"As a user, when I sign up, I see a confirmation email","",,,,feature,2,unstarted,"Oct 2, 2014",,,Jeff Taggart,"Text:
+
+Thanks for signing up for Rantly! Please log in here: http://rant.ly/sessions/new
+
+Thanks,
+Rantly ",https://www.pivotaltracker.com/story/show/79985684,
+79985702,"As a user, when I sign up, I cannot log in until I confirm my email","",,,,feature,2,unstarted,"Oct 2, 2014",,,Jeff Taggart,"Text:
+
+Thanks for signing up for Rantly! Please confirm your account to log in: http://rant.ly/confirmations?token=lkjafoijoi2j123ij12-9-sdafjlkjlckjdsalfkjsadf
+
+Thanks,
+Rantly ",https://www.pivotaltracker.com/story/show/79985702,
+80130910,"As a user, when I follow another user, when they rant, I receive an email notification","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,"Text:
+
+[USERNAME] has just posted a new rant. Check it out here: http://rant.ly/rants/1
+
+Thanks,
+Rantly",https://www.pivotaltracker.com/story/show/80130910,
+80129928,"As an admin, I can see how many login's have happened in keen.io","",,,,feature,3,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80129928,
+80130200,"As an admin user, when I log into my dashboard, I can see a bar chart of rants per day","",,,,feature,3,unstarted,"Oct 6, 2014",,,Jeff Taggart,"Gem's or javascript plugins are welcome
+",https://www.pivotaltracker.com/story/show/80130200,
+80130228,"As an admin user, I can see a bar chart of user signups per day","",,,,feature,2,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80130228,
+80130276,"As an admin user, I can see logins per hour (data from keen.io)","",,,,feature,3,unstarted,"Oct 6, 2014",,,Jeff Taggart,,https://www.pivotaltracker.com/story/show/80130276,
+80130164,"As an admin user, I can impersonate a user (log in as that user) to see what they see","",,,,feature,3,unstarted,"Oct 6, 2014",,,Jeff Taggart,"There is a special ""Go back to admin"" link in the nav that logs me out from that user.",https://www.pivotaltracker.com/story/show/80130164,
