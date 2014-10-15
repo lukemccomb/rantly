@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:user][:username])
     if user && user.authenticate(params[:user][:password])
       sign_in(user)
-      redirect_to "/dashboard"
+      redirect_to dashboard_path
     else
       @user = User.new
       @user.errors[:base] << "Username / password is invalid"

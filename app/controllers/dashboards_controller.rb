@@ -1,7 +1,7 @@
-class DashboardController < ApplicationController
+class DashboardsController < ApplicationController
 
-  def dashboard
-    @new_rant = Rant.new
+  def show
+    @rant = Rant.new
     @user = current_user
     @fullname = full_name(current_user)
     @user_rants = Rant.where(user_id: @user.id)

@@ -6,10 +6,10 @@
     </div>
     <hr/>
     <div class="rant-form">
-      <%= form_for [@user, @new_rant] do |form| %>
+      <%= form_for @rant do |form| %>
 
         <%= form.label :title, "A rant about" %>
-        <% @new_rant.errors.full_messages_for(:title) %>
+        <% @rant.errors.full_messages_for(:title) %>
         <br/>
         <%= form.text_field :title %>
         <br/>
@@ -40,7 +40,7 @@
           <p><%= rant.rant %></p>
           <br/>
           <% if rant.user_id == current_user.id %>
-          <%= button_to "DELETE", user_rant_path(@user, rant.id), method: :delete, html: { class: "delete"} %>
+          <%= button_to "DELETE", rant_path(rant.id), method: :delete, html: { class: "delete"} %>
           <% end %>
         <% end %>
       <% end %>

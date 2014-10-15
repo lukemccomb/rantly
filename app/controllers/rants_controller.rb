@@ -5,14 +5,12 @@ class RantsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @new_rant = Rant.new(allowed_params)
-    @new_rant.user_id = current_user.id
-    if @new_rant.save
+    rant = current_user.rants.build(allowed_params)
+    if rant.save
       flash[:new_rant]
-      redirect_to "/dashboard"
+      redirect_to dashboard_path
     else
-      render :create
+      render 'dashboards/show'
     end
 
   end
@@ -20,7 +18,7 @@ class RantsController < ApplicationController
   def destroy
     @rant = Rant.find_by(id: params[:id])
     @rant.destroy
-    redirect_to "/dashboard"
+    redirect_to dashboard_path
   end
 
   private

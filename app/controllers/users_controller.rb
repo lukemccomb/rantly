@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = current_user
     p allowed_params
     if @user.update(allowed_params)
-      redirect_to "/dashboard"
+      redirect_to "/dashboards"
     else
       render :edit
     end
