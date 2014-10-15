@@ -1,17 +1,18 @@
 class RantsController < ApplicationController
 
   def new
-    @rant = Rant.new
+    @new_rant = Rant.new
   end
 
   def create
-    @rant = Rant.new(allowed_params)
-    @rant.user_id = current_user.id
-    if @rant.save
+    @user = current_user
+    @new_rant = Rant.new(allowed_params)
+    @new_rant.user_id = current_user.id
+    if @new_rant.save
       flash[:new_rant]
       redirect_to "/dashboard"
     else
-      redirect_to "/dashboard"
+      render "dashboard/dashboard"
     end
 
   end

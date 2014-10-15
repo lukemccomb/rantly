@@ -20,8 +20,11 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(allowed_params)
-    redirect_to "/dashboard"
+    if @user.update(allowed_params)
+      redirect_to "/dashboard"
+    else
+      render :edit
+    end
   end
 
   private

@@ -65,4 +65,6 @@ feature "index page" do
     expect(page).to have_content("Rantly Let it all out")
   end
 
+  scenario "user can edit their profile"
+
 end

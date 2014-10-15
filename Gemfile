@@ -32,6 +32,7 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'byebug', '~> 3.5.1'
 end
 
 gem 'rails_12factor', group: :production
