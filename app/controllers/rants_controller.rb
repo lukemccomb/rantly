@@ -12,7 +12,7 @@ class RantsController < ApplicationController
       flash[:new_rant]
       redirect_to "/dashboard"
     else
-      render "dashboard/dashboard"
+      render :create
     end
 
   end
