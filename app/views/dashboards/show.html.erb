@@ -24,26 +24,11 @@
   <div class="rant-feed">
     <div class="user-rants">
         <h1>Latest Rants</h1>
-        <% @all_rants.each do |rant| %>
-          <hr/>
-          <p><%= rant.user.first_name %> <%= rant.user.last_name %></p>
-          <p><%= rant.title %></p>
-          <p><%= rant.rant %></p>
-        <% end %>
-
-      <% if @user_rants.length > 0 %>
+        <%= render @rants %>
+        <hr/>
         <h1>My Rants</h1>
-        <% @user_rants.each do |rant| %>
-          <hr/>
-          <p><%= rant.title %></p>
+        <%= render @user_rants %>
 
-          <p><%= rant.rant %></p>
-          <br/>
-          <% if rant.user_id == current_user.id %>
-          <%= button_to "DELETE", rant_path(rant.id), method: :delete, html: { class: "delete"} %>
-          <% end %>
-        <% end %>
-      <% end %>
     </div>
   </div>
 </div>

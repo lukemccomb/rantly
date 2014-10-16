@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @fullname = full_name(current_user)
     @user_rants = Rant.where(user_id: @user.id)
-    @all_rants = Rant.where.not(user_id: @user.id)
+    @rants = Rant.where.not(user_id: @user.id)
   end
 
   private

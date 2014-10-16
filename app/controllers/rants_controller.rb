@@ -10,7 +10,7 @@ class RantsController < ApplicationController
       flash[:new_rant]
       redirect_to dashboard_path
     else
-      render 'dashboards/show'
+      redirect_to dashboard_path
     end
 
   end
@@ -26,6 +26,5 @@ class RantsController < ApplicationController
   def allowed_params
     params.require(:rant).permit(:title, :rant)
   end
-
 
 end
