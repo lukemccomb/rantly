@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :edit, :update, :show]
 
-  resources :rants, only: [:create, :destroy]
+  resources :rants, only: [:create, :destroy, :show]
 
 end

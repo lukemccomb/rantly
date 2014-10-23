@@ -21,6 +21,11 @@ class RantsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def show
+    @rant = Rant.find_by(id: params[:id])
+    @new_rant = Rant.new
+  end
+
   private
 
   def allowed_params

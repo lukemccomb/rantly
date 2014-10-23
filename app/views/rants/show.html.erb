@@ -1,0 +1,33 @@
+<div class="dash-wrap">
+  <div class="new-rant-wrap">
+    <div class="thumbnail">
+      <%= image_tag 'jeff.jpg' %>
+      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
+    </div>
+    <hr/>
+    <div class="rant-form">
+      <%= form_for @new_rant do |form| %>
+        <%= form.label :title, "A rant about" %>
+        <% @rant.errors.full_messages_for(:title) %>
+        <br/>
+        <%= form.text_field :title %>
+        <br/>
+        <%= form.label :rant, "Rant" %>
+        <br/>
+        <%= form.text_area :rant %>
+        <br/>
+        <%= form.submit "RANT" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="rant-show">
+  <h1><%= @rant.title %></h1>
+  <hr/>
+  <h3>By <%= link_to "#{@rant.user.first_name.capitalize} #{@rant.user.last_name.capitalize}", user_path(@rant.user.id) %></h3>
+  <br/>
+  <p class="rant-body"><%= @rant.rant %></p>
+  <% if @rant.user_id == current_user.id %>
+    <%= button_to "DELETE", rant_path(@rant.id), method: :delete, html: {class: "delete"} %>
+  <% end %>
+</div>

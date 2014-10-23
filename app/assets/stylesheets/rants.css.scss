@@ -53,3 +53,28 @@
 .delete {
   float: right;
 }
+
+.rant-show {
+  padding: 5%;
+  margin-top: 5%;
+  text-align: center;
+  width: 70%;
+  display: inline-block;
+  float: right;
+  h1 {
+    font-size: 300%;
+  }
+  .rant-body {
+    text-align: justify;
+  }
+}
+
+.rant {
+  a {
+    text-decoration: none;
+    color: black;
+    :visited {
+      color: black;
+    }
+  }
+}
