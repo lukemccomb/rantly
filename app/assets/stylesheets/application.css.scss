@@ -436,10 +436,12 @@ p {
 .main-nav {
   color: #3e900e;
   position: fixed;
-  width: 100%;
+  width: 50%;
+  left: 40%;
   height: 10%;
   top: 5%;
-  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
   a {
     text-decoration: none;
     color: #58cb15;
