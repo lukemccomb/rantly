@@ -1,3 +1,97 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Log In
+
+.login-wrap {
+  padding-top: 3%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  .username, .password {
+    width: 110%;
+  }
+}
+
+.login-window {
+  width: 50%;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  background-color: white;
+  min-height: 210px;
+  height: 35%;
+
+  form {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    .username, .password, h1 {
+      width: 49%;
+      display: inline-block;
+      margin-top: 2%;
+      padding-left: 5%;
+      input {
+        width: 180%;
+      }
+    }
+    .login-button {
+      width: 100%;
+      border-top: 1px solid black;
+      margin-top: 3%;
+      text-align: center;
+
+      input {
+        width: 90%;
+        margin-top: 2%;
+        margin-top-min: 10px;
+        margin-bottom: 5%;
+        background-color: #227000;
+        border-radius: 5px;
+        color: white;
+        font-size: 120%;
+      }
+    }
+  }
+}
+
+.login-page {
+  background-color: gray;
+  height: 100%;
+  position: relative;
+  h1 {
+    font-size: 150%;
+  }
+}
+
+//Log Out
+
+.logout {
+  float: right;
+  width: 250px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  display: inline;
+}
+
+.logout-box {
+  width: 140px;
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: center;
+}
+
+.logout-link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
+}

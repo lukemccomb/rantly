@@ -1,0 +1,58 @@
+.welcome {
+  width: 100%;
+  position: relative;
+
+  .rant-title {
+    position: fixed;
+    top: 10%;
+    text-align: center;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 500%;
+  }
+
+  .tagline {
+    padding-top: 2%;
+    font-size: 120%;
+    text-align: center;
+    display: inline-block;
+    position: fixed;
+    top: 20%;
+  }
+}
+
+.quotes {
+  background-color: dimgrey;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5%;
+  color: white;
+  height: 55%;
+
+  .jeff-thumb {
+    float: left;
+    margin: 0 .1% 0 1%;
+    height: 100%;
+    width: 30%;
+  }
+
+  .index-quote {
+    text-align: left;
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    width: 45%;
+  }
+}
+
+.bottom-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 55%;
+}

@@ -1,0 +1,25 @@
+.dash-wrap {
+  position: absolute;
+  top: 3%;
+  left: 0;
+  width: 35%;
+  display: inline-block;
+  padding-bottom: 2%;
+  h1 {
+    text-align: center;
+    font-size: 400%;
+  }
+  h2 {
+    text-align: center;
+    font-size: 200%;
+  }
+  p {
+    font-weight: lighter;
+    text-align: justify;
+    padding: 1% 0 1% 0;
+  }
+  .user-show {
+    text-align: center;
+    text-decoration: none;
+  }
+}

@@ -1,3 +1,126 @@
 // Place all the styles related to the registration controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_link {
+  color: white;
+  font-size: 110%;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.login_link:visited {
+  color: white;
+}
+
+.register_link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
+}
+
+.login_reg {
+  float: right;
+  width: 250px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  display: inline;
+}
+
+.join_box {
+  width: 140px;
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: center;
+}
+
+.reg-page {
+  background-color: gray;
+  height: 100%;
+  position: relative;
+  h1 {
+    font-size: 150%;
+  }
+}
+
+.reg-window {
+  width: 50%;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  background-color: white;
+  height: auto;
+
+
+  .username, .password, .first-n, .last-n {
+    width: 49%;
+    display: inline-block;
+    margin-top: 2%;
+
+    input {
+      width: 80%;
+    }
+  }
+}
+
+.bio-field {
+  width: 89%;
+  margin-top: 2%;
+
+  textarea {
+    width: 100%;
+    height: 20em;
+  }
+}
+
+.reg-wrap {
+  padding-top: 3%;
+  padding-left: 9.5%;
+  width: auto;
+  margin: 0 auto;
+}
+
+.daily, .weekly, .monthly {
+  display: inline-block;
+  width: 32.5%;
+  padding-top: 3%;
+}
+
+.reg-button {
+  width: 100%;
+  border-top: 1px solid black;
+  margin-top: 3%;
+  text-align: center;
+
+  input {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #227000;
+    border-radius: 5px;
+    color: white;
+    font-size: 120%;
+  }
+}
+
+.flash-reg {
+  margin: 0 auto 0 auto;
+  width: auto;
+  background-color: green;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+  font-size: 130%;
+  p {
+    text-align: center;
+    display: inline;
+  }
+}
