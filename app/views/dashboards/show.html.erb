@@ -2,18 +2,19 @@
   <div class="new-rant-wrap">
     <div class="thumbnail">
       <%= image_tag 'jeff.jpg' %>
-      <h3 class="username"><%= link_to @fullname, edit_user_path(@user.id) %></h3>
+      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
     </div>
     <hr/>
     <div class="rant-form">
       <%= form_for @rant do |form| %>
 
         <%= form.label :title, "A rant about" %>
-        <% @rant.errors.full_messages_for(:title) %>
+        <%= @rant.errors.full_messages_for(:title).first %>
         <br/>
         <%= form.text_field :title %>
         <br/>
         <%= form.label :rant, "Rant" %>
+        <%= @rant.errors.full_messages_for(:rant).first %>
         <br/>
         <%= form.text_area :rant %>
         <br/>
@@ -28,7 +29,6 @@
         <hr/>
         <h1>My Rants</h1>
         <%= render @user_rants %>
-
     </div>
   </div>
 </div>

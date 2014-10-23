@@ -5,14 +5,16 @@ class RantsController < ApplicationController
   end
 
   def create
-    rant = current_user.rants.build(allowed_params)
-    if rant.save
+    @rant = current_user.rants.build(allowed_params)
+    if @rant.save
       flash[:new_rant]
       redirect_to dashboard_path
     else
-      redirect_to dashboard_path
+      @user = current_user
+      @rants = Rant.where.not(user_id: @user.id)
+      @user_rants = Rant.where(user_id: @user.id)
+      render 'dashboards/show'
     end
-
   end
 
   def destroy
