@@ -100,7 +100,7 @@ header {
   background-color: #333333;
   width: 100%;
   height: 10%;
-  position: absolute;
+  position: fixed;
   margin-bottom: 10%;
   z-index: 1;
 
@@ -324,13 +324,27 @@ p {
 
 .dash-wrap {
   position: absolute;
-  top: 10%;
+  top: 3%;
   left: 0;
-  height: 100%;
   width: 35%;
+  display: inline-block;
+  padding-bottom: 2%;
   h1 {
     text-align: center;
     font-size: 400%;
+  }
+  h2 {
+    text-align: center;
+    font-size: 200%;
+  }
+  p {
+    font-weight: lighter;
+    text-align: justify;
+    padding: 1% 0 1% 0;
+  }
+  .user-show {
+    text-align: center;
+    text-decoration: none;
   }
 }
 
@@ -370,7 +384,7 @@ p {
   top: 10%;
   height: 100%;
   background-color: grey;
-  padding: 1%;
+  padding: 3% 1% 1% 1%;
   color: white;
   display: inline-block;
   z-index: 1;
