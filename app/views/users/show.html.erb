@@ -23,7 +23,11 @@
   </div>
   <div class="rant-feed">
     <div class="user-rants">
-      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      <hr/>
+      <h1><%= @user.rate.capitalize %> Ranter</h1>
+      <hr/>
+      <p><%= @user.bio %></p>
       <%= render @user_rants %>
     </div>
   </div>
