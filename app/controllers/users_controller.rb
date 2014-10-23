@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @rant = Rant.new
+    @user = User.find_by(id: params[:id])
+    @user_rants = @user.rants
+  end
+
   private
 
   def allowed_params

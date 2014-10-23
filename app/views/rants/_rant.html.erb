@@ -1,6 +1,6 @@
 <hr/>
 <%= div_for rant do %>
-  <p><%= rant.user.first_name %> <%= rant.user.last_name %></p>
+  <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %>
   <%= rant.title %>
   <%= rant.rant %>
   <% if rant.user_id == current_user.id %>
