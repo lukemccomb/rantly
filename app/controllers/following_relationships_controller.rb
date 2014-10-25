@@ -3,17 +3,16 @@ class FollowingRelationshipsController < ApplicationController
   def create
     user = User.find(params[:user_id])
     current_user.followed_users << user
-    redirect_to user
+    redirect_to :back
   end
 
   def destroy
-    user = User.find(params[:user_id])
-    current_user.followed_users.
-    redirect_to user
+    current_user.followed_users.delete(params[:user_id])
+    redirect_to :back
   end
 
   def show
-
+    @user = current_user
     @rant = Rant.new
   end
 end

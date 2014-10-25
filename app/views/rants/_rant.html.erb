@@ -2,6 +2,11 @@
 <%= div_for rant, class: "rant" do %>
   <h2><%= rant.title %></h2>
   <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %><br/>
+  <% if following_user(@user) %>
+    <%= unfollow_button @user %>
+  <% else %>
+    <%= follow_button @user %>
+  <% end %>
   <%= link_to rant_path(rant.id) do %>
     <p class="rant-body"><%= rant.rant %></p>
   <% end %>

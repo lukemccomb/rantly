@@ -27,11 +27,11 @@
   <div class="rant-feed">
     <div class="user-rants">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <% if following_user(@user) %>
-        <%= unfollow_button @user %>
-      <% else %>
-        <%= follow_button @user %>
-      <% end %>
+        <% unless following_user(@user) %>
+          <%= follow_button @user %>
+        <% else %>
+          <%= unfollow_button @user %>
+        <% end %>
       <hr/>
       <h1><%= @user.rate.capitalize %> Ranter</h1>
       <hr/>
