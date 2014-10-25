@@ -1,27 +1,26 @@
-.welcome {
+.rant-title {
+  position: fixed;
+  top: 15%;
+  text-align: center;
+  display: inline-block;
   width: 100%;
-  position: relative;
-
-  .rant-title {
-    position: fixed;
-    top: 10%;
-    text-align: center;
-    display: inline-block;
-  }
-
-  h1 {
-    font-size: 500%;
-  }
-
-  .tagline {
-    padding-top: 2%;
-    font-size: 120%;
-    text-align: center;
-    display: inline-block;
-    position: fixed;
-    top: 20%;
-  }
+  left: 0;
 }
+
+h1 {
+  font-size: 500%;
+}
+
+.tagline {
+  padding-top: 2%;
+  font-size: 120%;
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 27.5%;
+  width: 100%;
+}
+
 
 .quotes {
   background-color: dimgrey;
@@ -37,14 +36,17 @@
     margin: 0 .1% 0 1%;
     height: 100%;
     width: 30%;
+    display: block;
   }
 
   .index-quote {
     text-align: left;
     height: 100%;
     width: 100%;
+    p {
+    display: block;
+    }
   }
-
   img {
     width: 45%;
   }
