@@ -1,0 +1,32 @@
+<div class="dash-wrap">
+  <div class="new-rant-wrap">
+    <div class="thumbnail">
+      <%= image_tag 'jeff.jpg' %>
+      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
+    </div>
+    <hr/>
+    <div class="rant-form">
+      <%= form_for @rant do |form| %>
+
+        <%= form.label :title, "A rant about" %>
+        <%= @rant.errors.full_messages_for(:title).first %>
+        <br/>
+        <%= form.text_field :title %>
+        <br/>
+        <%= form.label :rant, "Rant" %>
+        <%= @rant.errors.full_messages_for(:rant).first %>
+        <br/>
+        <%= form.text_area :rant %>
+        <br/>
+        <%= form.submit "RANT" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-rants">
+    <h1>Following</h1>
+    <hr/>
+    <% current_user.followed_users.each do |user| %>
+      <h2><%= user.first_name %></h2><br/>
+    <% end %>
+  </div>
+</div>

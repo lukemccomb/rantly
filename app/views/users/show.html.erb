@@ -2,7 +2,10 @@
   <div class="new-rant-wrap">
     <div class="thumbnail">
       <%= image_tag 'jeff.jpg' %>
-      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
+      <h3 class="username">
+        <%= link_to "#{current_user.first_name} #{current_user.last_name}",
+                    edit_user_path(current_user.id) %>
+      </h3>
     </div>
     <hr/>
     <div class="rant-form">
@@ -24,6 +27,11 @@
   <div class="rant-feed">
     <div class="user-rants">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      <% if following_user(@user) %>
+        <%= unfollow_button @user %>
+      <% else %>
+        <%= follow_button @user %>
+      <% end %>
       <hr/>
       <h1><%= @user.rate.capitalize %> Ranter</h1>
       <hr/>

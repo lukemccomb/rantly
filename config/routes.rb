@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :users, only: [:new, :create, :edit, :update, :show]
+  resources :users, only: [:new, :create, :edit, :update, :show] do
+    get 'following' => 'following_relationships#show'
+    post 'follow' => 'following_relationships#create'
+    post 'unfollow' => 'following_relationships#destroy'
+  end
+
 
   resources :rants, only: [:create, :destroy, :show]
 
