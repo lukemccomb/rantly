@@ -1,5 +1,4 @@
-<hr/>
-<%= div_for rant, class: "rant" do %>
+<%= div_for rant do %>
   <h2><%= rant.title %></h2>
   <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %><br/>
   <% if rant.user != current_user %>
@@ -15,4 +14,5 @@
   <% if rant.user_id == current_user.id %>
     <%= button_to "DELETE", rant_path(rant.id), method: :delete, html: {class: "delete"} %>
   <% end %>
+<hr/>
 <% end %>

@@ -1,10 +1,18 @@
+
+
+header {
+  width: 100%;
+  position: relative;
+}
+
 .wrapper {
   margin: 0 auto;
   box-sizing: border-box;
   text-align: center;
-  position: relative;
-  height: 100%;
-  background-color: white;
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  background-color: transparent;
   &:after {
     visibility: hidden;
     display: block;
@@ -15,36 +23,30 @@
   }
 }
 
-header {
-  background-color: #333333;
-  width: 100%;
-  min-height: 8%;
-  max-height: 75px;
-  position: fixed;
-  margin-bottom: 10%;
-  z-index: 1
-}
-
-.main_h1 {
+.logo-box {
   font-size: 150%;
-  text-decoration: none;
-  display: inline;
-  max-height: 75px;
-}
-
-.main_h1_box {
-  border-right: 1px solid lawngreen;
+  display: block;
   width: auto;
-  display: inline-block;
-  margin: 0;
-  padding-top: 2.5%;
-  padding-right: 2.5%;
-  padding-bottom: 2.5%;
-  padding-left: 2.5%;
-  height: 10%;
-  max-height: 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  color: white;
+  background-color: #272728;
+  border-right: 1px solid lawngreen;
   :visited {
     color: white;
+  }
+  .logo {
+    margin-top: 10px;
+    height: 33px;
+    a {
+    text-decoration: none;
+    }
   }
 }
 
@@ -56,18 +58,30 @@ p {
 .main-nav {
   color: #3e900e;
   position: fixed;
-  width: 50%;
-  left: 40%;
-  height: 10%;
-  top: 5%;
-  display: inline-block;
-  margin: 0 auto;
-  a {
-    text-decoration: none;
-    color: #58cb15;
-    font-size: 120%;
-    :visited {
-      color: green;
+  padding-bottom: 1%;
+  padding-right: 2%;
+  padding-top: 1%;
+  text-align: right;
+  width: 100%;
+  top: 0;
+  right: 0;
+  display: block;
+  z-index: 1;
+  background-color: #272728;
+  nav {
+    display: inline-block;
+    position: fixed;
+    top: 35px;
+    right: 33.5%;
+    a {
+      text-decoration: none;
+      color: #58cb15;
+      font-size: 115%;
+      font-family: Helvetica;
+      font-weight: 100;
+      :visited {
+        color: green;
+      }
     }
   }
 }
@@ -84,4 +98,75 @@ p {
 .field_with_errors {
   color: red;
   display: inline;
+}
+
+//Register / Join
+
+.login_link {
+  color: white;
+  font-size: 110%;
+  margin-top: 15px;
+  margin-right: 2%;
+  display: inline-block;
+  background-color: #272728;
+
+}
+
+.login_link:visited {
+  color: white;
+}
+
+.register_link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
+  background-color: #272728;
+}
+
+.login_reg {
+  position: fixed;
+  padding-bottom: 1%;
+  padding-right: 2%;
+  padding-top: 1%;
+  text-align: right;
+  width: 100%;
+  top: 0;
+  right: 0;
+  display: block;
+  z-index: 1;
+  background-color: #272728;
+}
+
+.join_box {
+  width: 140px;
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: center;
+}
+
+//Log Out
+
+.logout-box {
+  width: 140px;
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: center;
+}
+
+.logout-link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
 }

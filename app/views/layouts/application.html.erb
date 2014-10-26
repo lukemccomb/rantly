@@ -2,14 +2,16 @@
 <html>
 <head>
   <title>Rantly</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
-  <div class="main_h1_box">
-    <%= link_to 'Rant.ly', main_path, class: 'main_h1' %>
+  <div class="logo-box">
+    <div class="logo">
+      <%= link_to 'Rant.ly', main_path %>
+    </div>
   </div>
   <% unless current_user %>
     <div class="login_reg">
@@ -18,13 +20,13 @@
     </div>
   <% else %>
     <div class="main-nav">
-      <%= link_to "Dashboard", dashboard_path %> |
-      <%= link_to "Following", user_following_path(current_user.id) %> |
-      <%= link_to "Favorites" %> |
-      <%= link_to "Search" %>
-    </div>
-    <div class="logout">
-      <%= link_to 'LOGOUT', session_path, method: :delete, class: 'logout-box logout-link' %>
+      <nav>
+        <%= link_to "Dashboard", dashboard_path %> |
+        <%= link_to "Following", user_following_path(current_user.id) %> |
+        <%= link_to "Favorites" %> |
+        <%= link_to "Search" %>
+      </nav>
+      <%= link_to 'LOGOUT', session_path, method: :delete, class: 'logout-link logout-box' %>
     </div>
   <% end %>
 </header>

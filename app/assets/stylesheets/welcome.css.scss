@@ -25,12 +25,12 @@ h1 {
 .quotes {
   background-color: dimgrey;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   padding: 5%;
   color: white;
-  height: 55%;
-
+  height: 35%;
+  z-index: -1;
   .jeff-thumb {
     float: left;
     margin: 0 .1% 0 1%;

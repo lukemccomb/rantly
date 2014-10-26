@@ -1,6 +1,5 @@
 <div class="login-page">
   <div class="login-window">
-    <div class="login-wrap">
       <% @user.errors.full_messages.each do |error| %>
         <div class="errors">
           <%= error %>
@@ -23,6 +22,5 @@
         <%= form.submit "LOGIN" %>
       </div>
     <% end %>
-    </div>
   </div>
 </div>

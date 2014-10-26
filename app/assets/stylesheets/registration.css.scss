@@ -2,46 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.login_link {
-  color: white;
-  font-size: 110%;
-  margin-top: 15px;
-  display: inline-block;
-}
-
-.login_link:visited {
-  color: white;
-}
-
-.register_link {
-  color: white;
-  text-decoration: none;
-  font-size: 130%;
-}
-
-.login_reg {
-  float: right;
-  width: 250px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  display: inline;
-}
-
-.join_box {
-  width: 140px;
-  background-color: green;
-  border: 1px solid gray;
-  border-radius: 2px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  float: right;
-  text-align: center;
-}
-
 .reg-page {
   background-color: gray;
   height: 100%;
