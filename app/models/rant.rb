@@ -3,6 +3,6 @@ class Rant < ActiveRecord::Base
   belongs_to :user
 
   validates :title, presence: true
-  validates :rant, presence: true, length: { minimum: 140 }
+  validates :rant, presence: true, length: { minimum: 140, maximum: 255 }
 
 end

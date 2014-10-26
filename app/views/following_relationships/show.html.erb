@@ -25,7 +25,7 @@
   <div class="user-rants">
     <h1>Following</h1>
     <hr/>
-    <% @user.followed_users.each do |user| %>
+    <% @current_user.followed_users.each do |user| %>
       <h2><%= user.first_name %></h2><br/>
     <% end %>
   </div>
