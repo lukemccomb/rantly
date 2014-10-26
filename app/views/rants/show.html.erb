@@ -21,10 +21,19 @@
     </div>
   </div>
 </div>
-<div class="rant-show">
+<div class="rant-feed">
   <h1><%= @rant.title %></h1>
+  <% if favorite_rant(@rant) %>
+    <%= unfavorite_button(@rant) %>
+  <% else %>
+    <%= favorite_button(@rant) %>
+  <% end %>
   <hr/>
-  <h3>By <%= link_to "#{@rant.user.first_name.capitalize} #{@rant.user.last_name.capitalize}", user_path(@rant.user.id) %></h3>
+  <h3>
+    By <%= link_to "#{@rant.user.first_name.capitalize}
+                   #{@rant.user.last_name.capitalize}",
+                   user_path(@rant.user.id) %>
+  </h3>
   <br/>
   <p class="rant-body"><%= @rant.rant %></p>
   <% if @rant.user_id == current_user.id %>

@@ -2,13 +2,15 @@
   width: 25%;
   position: fixed;
   left: 0;
-  bottom: 0;
-  height: 90%;
+  top: 0;
+  max-height: 100%;
+  min-height: 100%;
   background-color: grey;
-  padding: 12.5% 1% 5% 1%;
+  padding: 0% 1% 5% 1%;
   color: white;
   display: inline-block;
   z-index: 0;
+  overflow: scroll;
   h3 {
     text-align: justify;
     width: 100%;
@@ -45,21 +47,6 @@
 
 .delete {
   float: right;
-}
-
-.rant-show {
-  padding: 5%;
-  margin-top: 5%;
-  text-align: center;
-  width: 70%;
-  display: inline-block;
-  float: right;
-  h1 {
-    font-size: 300%;
-  }
-  .rant-body {
-    text-align: justify;
-  }
 }
 
 .rant {
