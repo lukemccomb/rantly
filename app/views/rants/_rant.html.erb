@@ -1,5 +1,5 @@
 <%= div_for rant do %>
-  <h2><%= rant.title %></h2>
+  <h2><%= hash_tagger(rant.title) %></h2>
   <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %><br/>
   <% if rant.user != current_user %>
     <% if following_user(rant.user_id) %>

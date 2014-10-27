@@ -22,7 +22,7 @@
   </div>
 </div>
 <div class="rant-feed">
-  <h1><%= @rant.title %></h1>
+  <h1><%= hash_tagger(@rant.title) %></h1>
   <% if favorite_rant(@rant) %>
     <% if @rant.favorites.length == 1 %>
       <%= @rant.favorites.length %> Favorite
