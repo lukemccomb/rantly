@@ -24,7 +24,21 @@ module UsersHelper
   end
 
   def unfavorite_button rant
-    button_to 'Unfavorite', rant_favorite_path(rant_id: rant.id), method: :delete
+    button_to 'Unfavorite',
+              rant_favorite_path(rant_id: rant.id),
+              method: :delete
+  end
+
+  def dash_favorite_button rant
+    button_to 'Favorite',
+              rant_favorites_path(rant.id),
+              {rant_id: rant.id}
+  end
+
+  def dash_unfavorite_button rant
+    button_to 'Unfavorite',
+              rant_favorite_path(id: current_user.id, rant_id: rant.id),
+              method: :delete
   end
 
   def favorite_rant rant

@@ -11,6 +11,11 @@
     <%= link_to rant_path(rant.id) do %>
       <p class="rant-body"><%= rant.rant %></p>
   <% end %>
+  <% if favorite_rant(rant) %>
+    <%= dash_unfavorite_button(rant) %>
+  <% else %>
+    <%= dash_favorite_button(rant) %>
+  <% end %>
   <% if rant.user_id == current_user.id %>
     <%= button_to "DELETE", rant_path(rant.id), method: :delete, html: {class: "delete"} %>
   <% end %>
