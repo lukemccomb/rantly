@@ -9,7 +9,7 @@
     <% end %>
   <% end %>
   <%= link_to rant_path(rant.id) do %>
-    <p class="rant-body"><%= rant.rant %></p>
+    <p class="rant-body"><%= hash_tagger(rant.rant) %></p>
   <% end %>
   <% if favorite_rant(rant) %>
     <% if rant.favorites.length == 1 %>

@@ -31,6 +31,19 @@
     <% end %>
   </div>
   <br/>
-  <h2>You searched for: <%= @search.term %></h2>
+  <h2>Rant Results</h2>
+  <% if @search.rants.length > 0 %>
   <%= render @search.rants %>
+  <% else %>
+  <h3>No rants contain your search term!</h3>
+  <% end %>
+  <hr/>
+  <h2>User Results</h2>
+  <% if @search.users.length > 0 %>
+    <% @search.users.each do |user| %>
+      <%= render user.rants %>
+    <% end %>
+  <% else %>
+    <h3>No users match your search term!</h3>
+  <% end %>
 </div>

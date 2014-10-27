@@ -6,6 +6,9 @@ class Search
 
   def rants
     Rant.where("rant iLIKE ? OR title iLIKE ?", "%#{term}%", "%#{term}%")
-    # Model.where("name LIKE ? OR last_name LIKE ? OR first_name LIKE ?", "%#{search}%","%#{search}%","%#{search}%")
+  end
+
+  def users
+    User.where("username iLIKE ? OR first_name iLIKE ? OR last_name iLIKE ?", "%#{term}%", "%#{term}%", "%#{term}%")
   end
 end

@@ -8,8 +8,7 @@ class Rant < ActiveRecord::Base
   validates :rant, presence: true, length: { minimum: 140, maximum: 255 }
 
   def self.search term
-    rants = Rant.where("keywords LIKE ?", "%#{term}%")
-    where(content_type: 'Rant', content_id: rants)
+    self.where("rant iLIKE ?", "%#{term}%")
   end
 
 end

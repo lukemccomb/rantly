@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resource :search, only: [:new, :show]
+  resources :hashtags, only: [:show]
 
   resources :rants, only: [:create, :destroy, :show] do
     resources :favorites, only: [:create, :destroy]
