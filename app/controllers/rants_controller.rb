@@ -26,6 +26,7 @@ class RantsController < ApplicationController
   def show
     @rant = Rant.find_by(id: params[:id])
     @new_rant = Rant.new
+    @comment = Comment.new
   end
 
   private

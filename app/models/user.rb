@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :rants
   has_many :favorites
+  has_many :comments
 
   has_many :followed_user_relationships,
            foreign_key: :follower_id,
