@@ -7,4 +7,9 @@ class Rant < ActiveRecord::Base
   validates :title, presence: true
   validates :rant, presence: true, length: { minimum: 140, maximum: 255 }
 
+  def self.search term
+    rants = Rant.where("keywords LIKE ?", "%#{term}%")
+    where(content_type: 'Rant', content_id: rants)
+  end
+
 end

@@ -24,7 +24,7 @@
         <%= link_to "Dashboard", dashboard_path %> |
         <%= link_to "Following", user_following_path(current_user.id) %> |
         <%= link_to "Favorites", user_favorites_path(current_user.id) %> |
-        <%= link_to "Search" %>
+        <%= link_to "Search", new_search_path %>
       </nav>
       <%= link_to 'LOGOUT', session_path, method: :delete, class: 'logout-link logout-box' %>
     </div>

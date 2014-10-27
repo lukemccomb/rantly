@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     post 'unfollow' => 'following_relationships#destroy'
   end
 
+  resource :search, only: [:new, :show]
 
   resources :rants, only: [:create, :destroy, :show] do
     resources :favorites, only: [:create, :destroy]
