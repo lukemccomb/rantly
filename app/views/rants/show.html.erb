@@ -24,9 +24,19 @@
 <div class="rant-feed">
   <h1><%= @rant.title %></h1>
   <% if favorite_rant(@rant) %>
-    <%= unfavorite_button(@rant) %>
+    <% if @rant.favorites.length == 1 %>
+    <%= @rant.favorites.length %> Favorite
   <% else %>
-    <%= favorite_button(@rant) %>
+    <%= @rant.favorites.length %> Favorites
+  <% end %>
+  <%= unfavorite_button(@rant) %>
+  <% else %>
+  <% if @rant.favorites.length == 1 %>
+  <%= @rant.favorites.length %> Favorite
+  <% else %>
+  <%= @rant.favorites.length %> Favorites
+  <% end %>
+  <%= favorite_button(@rant) %>
   <% end %>
   <hr/>
   <h3>
@@ -35,6 +45,7 @@
                    user_path(@rant.user.id) %>
   </h3>
   <br/>
+
   <p class="rant-body"><%= @rant.rant %></p>
   <% if @rant.user_id == current_user.id %>
     <%= button_to "DELETE", rant_path(@rant.id), method: :delete, html: {class: "delete"} %>

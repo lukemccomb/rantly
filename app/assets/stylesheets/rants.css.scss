@@ -65,3 +65,11 @@
     }
   }
 }
+
+.rant-body {
+    text-decoration: none;
+    color: black;
+    :visited {
+      color: black;
+    }
+}
