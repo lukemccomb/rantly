@@ -22,7 +22,8 @@
   </div>
 </div>
 <div class="rant-feed">
-  <h1>Search</h1><br/>
+  <h1>Search</h1>
+  <hr/><br/>
   <div class="search">
     <%= form_for(:search, url: search_path, method: :get) do |form| %>
       <%= form.text_field :term, placeholder: "Enter a search term" %>
@@ -31,6 +32,5 @@
   </div>
   <br/>
   <h2>You searched for: <%= @search.term %></h2>
-  <hr/>
   <%= render @search.rants %>
 </div>

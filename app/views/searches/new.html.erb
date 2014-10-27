@@ -23,6 +23,7 @@
 </div>
 <div class="rant-feed">
   <h1>Search</h1>
+  <hr/>
   <div class="search">
     <%= form_for(:search, url: search_path, method: :get) do |form| %>
       <%= form.text_field :term, placeholder: "Enter a search term" %>
