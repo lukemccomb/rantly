@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :edit, :update, :show] do
     get 'following' => 'following_relationships#show'
+    get 'favorites' =>  'favorites#show'
     post 'follow' => 'following_relationships#create'
     post 'unfollow' => 'following_relationships#destroy'
   end

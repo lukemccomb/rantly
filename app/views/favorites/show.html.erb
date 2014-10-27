@@ -1,0 +1,38 @@
+<div class="dash-wrap">
+  <div class="new-rant-wrap">
+    <div class="thumbnail">
+      <%= image_tag 'jeff.jpg' %>
+      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
+    </div>
+    <hr/>
+    <div class="rant-form">
+      <%= form_for @new_rant do |form| %>
+        <%= form.label :title, "A rant about" %>
+        <% @new_rant.errors.full_messages_for(:title) %>
+        <br/>
+        <%= form.text_field :title %>
+        <br/>
+        <%= form.label :rant, "Rant" %>
+        <br/>
+        <%= form.text_area :rant %>
+        <br/>
+        <%= form.submit "RANT" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="rant-feed">
+  <h1>Favorites</h1>
+  <hr/>
+  <% current_user.favorites.each do |fav| %>
+    <h2><%= fav.rant.title %></h2>
+    <h3>  <%= link_to "#{fav.rant.user.first_name} #{fav.rant.user.last_name}", user_path(fav.rant.user.id) %><br/>    </h3>
+    <p><%= fav.rant.rant %></p>
+    <% if favorite_rant(fav.rant) %>
+      <%= dash_unfavorite_button(fav.rant) %>
+    <% else %>
+      <%= dash_favorite_button(fav.rant) %>
+    <% end %>
+    <hr/>
+  <% end %>
+</div>
