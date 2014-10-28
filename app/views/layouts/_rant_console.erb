@@ -5,13 +5,14 @@
   </div>
   <hr/>
   <div class="rant-form">
-    <%= form_for @new_rant do |form| %>
+    <%= form_for @rant do |form| %>
       <%= form.label :title, "A rant about" %>
-      <% @new_rant.errors.full_messages_for(:title) %>
+      <%= @rant.errors.full_messages_for(:title).first %>
       <br/>
       <%= form.text_field :title %>
       <br/>
       <%= form.label :rant, "Rant" %>
+      <%= @rant.errors.full_messages_for(:rant).first %>
       <br/>
       <%= form.text_area :rant %>
       <br/>

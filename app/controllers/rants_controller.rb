@@ -5,6 +5,7 @@ class RantsController < ApplicationController
   end
 
   def create
+    @rant = Rant.new
     @rant = current_user.rants.build(allowed_params)
     if @rant.save
       flash[:new_rant]
@@ -24,8 +25,8 @@ class RantsController < ApplicationController
   end
 
   def show
-    @rant = Rant.find_by(id: params[:id])
-    @new_rant = Rant.new
+    @this_rant = Rant.find_by(id: params[:id])
+    @rant = Rant.new
     @comment = Comment.new
   end
 

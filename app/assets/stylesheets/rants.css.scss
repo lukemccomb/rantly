@@ -32,13 +32,15 @@
 }
 
 .rant-form {
-  text-align: left;
   height: 100%;
-
+  text-align: center;
+  .new-rant-label {
+    text-align: left;
+    margin-top: 3%;
+  }
   input {
     width: 90%;
   }
-
   textarea {
     width: 90%;
     height: 30vh;

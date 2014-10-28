@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    @new_rant = Rant.new
+    @rant = Rant.new
   end
 
   def destroy

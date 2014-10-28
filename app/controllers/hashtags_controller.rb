@@ -2,7 +2,7 @@ class HashtagsController < ApplicationController
 
   def show
     @search = Search.new(term: hashtag)
-    @new_rant = Rant.new
+    @rant = Rant.new
   end
 
   private

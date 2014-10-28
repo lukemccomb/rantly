@@ -13,6 +13,6 @@ class FollowingRelationshipsController < ApplicationController
 
   def show
     @current_user = current_user
-    @new_rant = Rant.new
+    @rant = Rant.new
   end
 end
