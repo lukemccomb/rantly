@@ -26,10 +26,26 @@ feature "dashboard" do
     fill_in "A rant about", with: "first rant"
     fill_in "Rant", with: @rant
     click_on "RANT"
+    click_on "LOGOUT"
+
+    click_on "JOIN"
+    expect(page).to have_content("Register Username Password First name Last name")
+    fill_in "Username", with: "user2"
+    fill_in "Password", with: "password"
+    fill_in "First name", with: "sample2"
+    fill_in "Last name", with: "user2"
+    fill_in "Bio", with: "sample bio2"
+    choose('Weekly')
+    click_on "REGISTER"
+    click_on "Login"
+    fill_in "Username", with: "user2"
+    fill_in "Password", with: "password"
+    click_on "LOGIN"
   end
 
   scenario "user's name is a link to user's profile in rant view" do
-
+    click_on "sample user"
+    expect(page).to have_content("sample user Weekly Ranter sample bio")
   end
 
 end
