@@ -65,6 +65,16 @@ feature "index page" do
     expect(page).to have_content("Rantly Let it all out")
   end
 
-  scenario "user can edit their profile"
+  scenario "user can edit their profile" do
+    click_on "Login"
+    fill_in "Username", with: "user"
+    fill_in "Password", with: "password"
+    click_on "LOGIN"
+    click_on "sample user"
+    expect(page).to have_content("Edit Profile")
+    fill_in "First name", with: "Sample"
+    click_on "UPDATE"
+    expect(page).to have_content("Sample user")
+  end
 
 end

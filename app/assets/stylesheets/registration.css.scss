@@ -14,11 +14,10 @@
 .reg-window {
   width: 50%;
   position: absolute;
-  top: 15%;
+  top: 16%;
   left: 25%;
   background-color: white;
   height: auto;
-
 
   .username, .password, .first-n, .last-n {
     width: 49%;
@@ -37,12 +36,12 @@
 
   textarea {
     width: 100%;
-    height: 20em;
+    height: 5em;
   }
 }
 
 .reg-wrap {
-  padding-top: 3%;
+  padding-top: 1%;
   padding-left: 9.5%;
   width: auto;
   margin: 0 auto;
@@ -51,7 +50,7 @@
 .daily, .weekly, .monthly {
   display: inline-block;
   width: 32.5%;
-  padding-top: 3%;
+  padding-top: 2%;
 }
 
 .reg-button {
@@ -62,8 +61,8 @@
 
   input {
     width: 80%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     background-color: #227000;
     border-radius: 5px;
     color: white;

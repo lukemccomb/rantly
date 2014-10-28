@@ -4,7 +4,7 @@ class Rant < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :comments
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 50 }
   validates :rant, presence: true, length: { minimum: 140, maximum: 255 }
 
   def self.search term

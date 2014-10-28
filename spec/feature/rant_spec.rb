@@ -17,39 +17,47 @@ feature "index page" do
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
     click_on "LOGIN"
+
+    @rant = "Sometimes I order a beet salad, so when the waiter comes and
+                            lays down my salad I can say 'thanks for laying down those
+                            funky beets'. It's an expensive joke because I don't even like beets."
   end
 
   scenario "Logged-in user can post a rant" do
     expect(page).to have_content("A rant about Rant")
     fill_in "A rant about", with: "first rant"
-    fill_in "Rant", with: "This is the first rant!"
+    fill_in "Rant", with: @rant
     click_on "RANT"
-    expect(page).to have_content("My Rants first rant This is the first rant!")
+    expect(page).to have_content(@rant)
   end
 
   scenario "user sees rant validation error messages when rant post fails" do
     click_on "RANT"
-    expect(page).to have_content("Title is required")
-    expect(page).to have_content("Rant is required")
-    fill_in "A rant about", with: "first"*11
+    expect(page).to have_content("Title can't be blank")
+    expect(page).to have_content("Rant can't be blank")
+  end
+
+  scenario "title and rant length" do
+    fill_in "A rant about", with: "f"*51
     fill_in "Rant", with: "This is the first rant!"
-    expect(page).to have_content("Title must be less than 50 characters")
-    expect(page).to have_content("Rant must be greater than 140 characters")
+    click_on "RANT"
+    expect(page).to have_content("Title is too long (maximum is 50 characters)")
+    expect(page).to have_content(" Rant is too short (minimum is 140 characters)")
   end
 
   scenario "user can delete their own rants" do
     fill_in "A rant about", with: "first rant"
-    fill_in "Rant", with: "This is the first rant!"
+    fill_in "Rant", with: @rant
     click_on "RANT"
     click_on "DELETE"
-    expect(page).to_not have_content("My Rants first rant This is the first rant!")
+    expect(page).to_not have_content(@rant)
   end
 
   scenario "user can see other user's rants under Latest Rants section" do
     fill_in "A rant about", with: "first rant"
-    fill_in "Rant", with: "This is the first rant!"
+    fill_in "Rant", with: @rant
     click_on "RANT"
-    expect(page).to have_content("My Rants first rant This is the first rant!")
+    expect(page).to have_content(@rant)
     click_on  "LOGOUT"
     expect(page).to have_content("Rantly Let it all out")
     click_on "JOIN"
@@ -65,7 +73,7 @@ feature "index page" do
     fill_in "Password", with: "password"
     click_on "LOGIN"
     expect(page).to have_content("sample2 user2")
-    expect(page).to have_content("Latest Rants sample user first rant This is the first rant!")
+    expect(page).to have_content(@rant)
   end
 
 end

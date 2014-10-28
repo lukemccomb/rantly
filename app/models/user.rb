@@ -21,5 +21,6 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true, length: { maximum: 155 }
   validates :bio, presence: true, length: { maximum: 255 }
   validates :rate, presence: true
+  validates :password, length: { minimum: 8 }, allow_nil: true
 
 end
