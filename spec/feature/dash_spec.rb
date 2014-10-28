@@ -48,4 +48,17 @@ feature "dashboard" do
     expect(page).to have_content("sample user Weekly Ranter sample bio")
   end
 
+  scenario "can see user's rants on profile view" do
+    click_on "sample user"
+    expect(page).to have_content("first rant sample user Sometimes I order a beet salad, so when the waiter comes and
+                            lays down my salad I can say 'thanks for laying down those
+                            funky beets'. It's an expensive joke because I don't even like beets.")
+  end
+
+  scenario "rant views are linked to rant body on dash view" do
+    click_on "Sometimes I order a beet salad"
+    expect(page).to have_content("first rant 0 Favorites By Sample User Sometimes I order a beet salad, so when the waiter comes and")
+    expect(page).to have_content("Comments")
+  end
+
 end
