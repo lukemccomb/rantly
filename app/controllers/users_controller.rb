@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @rant = Rant.new
+    @new_rant = Rant.new
     @user = User.find_by(id: params[:id])
     @user_rants = @user.rants
   end

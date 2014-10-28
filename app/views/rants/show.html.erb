@@ -1,72 +1,36 @@
 <div class="dash-wrap">
-  <div class="new-rant-wrap">
-    <div class="thumbnail">
-      <%= image_tag 'jeff.jpg' %>
-      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
-    </div>
+  <%= render partial: "layouts/rant_console" %>
+  <div class="rant-feed">
+    <h1><%= hash_tagger(@rant.title) %></h1>
+    <%= render partial: "rants/favorites" %>
     <hr/>
-    <div class="rant-form">
-      <%= form_for @new_rant do |form| %>
-        <%= form.label :title, "A rant about" %>
-        <% @rant.errors.full_messages_for(:title) %>
-        <br/>
-        <%= form.text_field :title %>
-        <br/>
-        <%= form.label :rant, "Rant" %>
-        <br/>
-        <%= form.text_area :rant %>
-        <br/>
-        <%= form.submit "RANT" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="rant-feed">
-  <h1><%= hash_tagger(@rant.title) %></h1>
-  <% if favorite_rant(@rant) %>
-    <% if @rant.favorites.length == 1 %>
-      <%= @rant.favorites.length %> Favorite
-    <% else %>
-      <%= @rant.favorites.length %> Favorites
+    <h3>
+      By <%= link_to "#{@rant.user.first_name.capitalize}
+                     #{@rant.user.last_name.capitalize}",
+                     user_path(@rant.user.id) %>
+    </h3>
+    <br/>
+    <p class="rant-body"><%= hash_tagger(@rant.rant) %></p>
+    <% if @rant.user_id == current_user.id %>
+      <%= button_to "DELETE", rant_path(@rant.id), method: :delete, html: {class: "delete"} %>
     <% end %>
-    <%= unfavorite_button(@rant) %>
-  <% else %>
-    <% if @rant.favorites.length == 1 %>
-      <%= @rant.favorites.length %> Favorite
-    <% else %>
-      <%= @rant.favorites.length %> Favorites
-    <% end %>
-    <%= favorite_button(@rant) %>
-  <% end %>
-  <hr/>
-  <h3>
-    By <%= link_to "#{@rant.user.first_name.capitalize}
-                   #{@rant.user.last_name.capitalize}",
-                   user_path(@rant.user.id) %>
-  </h3>
-  <br/>
-
-  <p class="rant-body"><%= hash_tagger(@rant.rant) %></p>
-
-  <% if @rant.user_id == current_user.id %>
-    <%= button_to "DELETE", rant_path(@rant.id), method: :delete, html: {class: "delete"} %>
-  <% end %>
-  <hr/>
-  <div class="comments">
-    <h3>Comments</h3>
-    <% if @rant.comments.length > 0 %>
-    <% @rant.comments.each do |comment| %>
-      <p><%= comment.comment %></p>
-      <h4>By <%= comment.user.username %></h4>
-        <hr/>
-    <% end %>
-    <% else %>
-      <p>No comments yet!</p>
-    <% end %>
-    <%= form_for [@rant, @comment] do |form| %>
-      <%= form.text_area :comment, placeholder: 'Enter comment here...' %>
-      <br/>
-      <%= form.submit %>
-    <% end %>
+    <hr/>
+      <div class="comments">
+        <h3>Comments</h3>
+        <% if @rant.comments.length > 0 %>
+          <% @rant.comments.each do |comment| %>
+            <p><%= comment.comment %></p>
+            <h4>By <%= comment.user.username %></h4>
+            <hr/>
+          <% end %>
+        <% else %>
+          <p>No comments yet!</p>
+        <% end %>
+        <%= form_for [@rant, @comment] do |form| %>
+          <%= form.text_area :comment, placeholder: 'Enter comment here...' %>
+          <br/>
+          <%= form.submit %>
+        <% end %>
+      </div>
   </div>
 </div>

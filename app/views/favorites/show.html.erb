@@ -1,47 +1,18 @@
 <div class="dash-wrap">
-  <div class="new-rant-wrap">
-    <div class="thumbnail">
-      <%= image_tag 'jeff.jpg' %>
-      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
-    </div>
+  <%= render partial: "layouts/rant_console" %>
+  <div class="rant-feed">
+    <h1>Favorites</h1>
     <hr/>
-    <div class="rant-form">
-      <%= form_for @new_rant do |form| %>
-        <%= form.label :title, "A rant about" %>
-        <% @new_rant.errors.full_messages_for(:title) %>
-        <br/>
-        <%= form.text_field :title %>
-        <br/>
-        <%= form.label :rant, "Rant" %>
-        <br/>
-        <%= form.text_area :rant %>
-        <br/>
-        <%= form.submit "RANT" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="rant-feed">
-  <h1>Favorites</h1>
-  <hr/>
-  <% current_user.favorites.each do |fav| %>
-    <h2><%= hash_tagger(fav.rant.title) %></h2>
+    <% current_user.favorites.each do |fav| %>
+      <h2><%= hash_tagger(fav.rant.title) %></h2>
 
-    <h3>  <%= link_to "#{fav.rant.user.first_name} #{fav.rant.user.last_name}", user_path(fav.rant.user.id) %><br/>
-    </h3>
-    <%= link_to rant_path(fav.rant.id), class: 'rant-body' do %>
-      <p><%= hash_tagger(fav.rant.rant) %></p>
-    <% end %>
-    <% if favorite_rant(fav.rant) %>
-      <% if fav.rant.favorites.length == 1 %>
-        <%= fav.rant.favorites.length %> Favorite
-      <% else %>
-        <%= fav.rant.favorites.length %> Favorites
+      <h3>  <%= link_to "#{fav.rant.user.first_name} #{fav.rant.user.last_name}", user_path(fav.rant.user.id) %><br/>
+      </h3>
+      <%= link_to rant_path(fav.rant.id), class: 'rant-body' do %>
+        <p><%= hash_tagger(fav.rant.rant) %></p>
       <% end %>
-      <%= dash_unfavorite_button(fav.rant) %>
-    <% else %>
-      <%= dash_favorite_button(fav.rant) %>
+      <%= rant_favorites(fav.rant) %>
+      <hr/>
     <% end %>
-    <hr/>
-  <% end %>
+  </div>
 </div>

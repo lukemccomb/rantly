@@ -1,33 +1,8 @@
 <div class="dash-wrap">
-  <div class="new-rant-wrap">
-    <div class="thumbnail">
-      <%= image_tag 'jeff.jpg' %>
-      <h3 class="username"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
-    </div>
+  <%= render partial: "layouts/rant_console" %>
+  <div class="rant-feed">
+    <h1>Search</h1>
     <hr/>
-    <div class="rant-form">
-      <%= form_for @new_rant do |form| %>
-        <%= form.label :title, "A rant about" %>
-        <% @new_rant.errors.full_messages_for(:title) %>
-        <br/>
-        <%= form.text_field :title %>
-        <br/>
-        <%= form.label :rant, "Rant" %>
-        <br/>
-        <%= form.text_area :rant %>
-        <br/>
-        <%= form.submit "RANT" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="rant-feed">
-  <h1>Search</h1>
-  <hr/>
-  <div class="search">
-    <%= form_for(:search, url: search_path, method: :get) do |form| %>
-      <%= form.text_field :term, placeholder: "Enter a search term" %>
-      <%= form.submit "Search", class: 'search-button', id: 'search-button' %>
-    <% end %>
+    <%= render partial: "searches/search" %>
   </div>
 </div>

@@ -64,6 +64,9 @@
       color: black;
     }
   }
+  .hashtag-link {
+    color: blue;
+  }
 }
 
 .rant-body {
@@ -72,6 +75,9 @@
     color: black;
     :visited {
       color: black;
+    }
+    .hashtag-link {
+      color: blue;
     }
 }
 
