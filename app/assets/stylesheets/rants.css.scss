@@ -27,12 +27,19 @@
   height: 100%;
   text-align: center;
   line-height: 150%;
-  input {
+  #rant_title {
     width: 90%;
   }
   textarea {
     width: 90%;
     height: 30vh;
+  }
+  .rant-button {
+    background-color: green;
+    color: white;
+    font-size: 115%;
+    width: 92%;
+    margin-right: 1.8%;
   }
 }
 
@@ -77,6 +84,34 @@
   text-align: center;
   margin: 0 auto;
   textarea {
-    width: 70%;
+    width: 99%;
+    font-size: 110%;
+  }
+  .rant-button {
+    background-color: green;
+    color: white;
+    font-size: 95%;
+    width: 25%;
+    float: right;
+  }
+  hr {
+    width: 80%;
+  }
+}
+
+.favorite-wrap {
+  text-align: right;
+  .favorite {
+    background-color: forestgreen;
+    color: white;
+    font-size: 90%;
+    border-radius: 9px;
+  }
+  .unfavorite {
+    background-color: #001aa5;
+    color: white;
+    font-size: 90%;
+    border-radius: 9px;
+
   }
 }

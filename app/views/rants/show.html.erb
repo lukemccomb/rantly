@@ -2,7 +2,10 @@
   <%= render partial: "layouts/rant_console" %>
   <div class="rant-feed">
     <h1><%= hash_tagger(@this_rant.title) %></h1>
-    <%= rant_favorites(@this_rant) %>
+
+    <div class="favorite-wrap">
+      <%= rant_favorites(@this_rant) %>
+    </div>
     <hr/>
     <h3>
       By <%= link_to "#{@this_rant.user.first_name.capitalize}
@@ -10,27 +13,28 @@
                      user_path(@this_rant.user.id) %>
     </h3>
     <br/>
+
     <p class="rant-body"><%= hash_tagger(@this_rant.rant) %></p>
     <% if @this_rant.user_id == current_user.id %>
       <%= button_to "DELETE", rant_path(@this_rant.id), method: :delete, html: {class: "delete"} %>
     <% end %>
-    <hr/>
-      <div class="comments">
-        <h3>Comments</h3>
-        <% if @this_rant.comments.length > 0 %>
-          <% @this_rant.comments.each do |comment| %>
-            <p><%= comment.comment %></p>
-            <h4>By <%= comment.user.username %></h4>
-            <hr/>
-          <% end %>
-        <% else %>
-          <p>No comments yet!</p>
+    <div class="comments">
+      <hr/>
+      <h3>Comments</h3>
+      <% if @this_rant.comments.length > 0 %>
+        <% @this_rant.comments.each do |comment| %>
+          <p><%= comment.comment %></p>
+          <h4>By <%= comment.user.username %></h4>
+          <hr/>
         <% end %>
-        <%= form_for [@this_rant, @comment] do |form| %>
-          <%= form.text_area :comment, placeholder: 'Enter comment here...' %>
-          <br/>
-          <%= form.submit %>
-        <% end %>
-      </div>
+      <% else %>
+        <p>No comments yet!</p>
+      <% end %>
+      <%= form_for [@this_rant, @comment] do |form| %>
+        <%= form.text_area :comment, placeholder: 'Enter comment here...' %>
+        <br/>
+        <%= form.submit "RANT BACK", :class => 'rant-button' %>
+      <% end %>
+    </div>
   </div>
 </div>

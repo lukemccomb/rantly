@@ -11,7 +11,9 @@
       <%= link_to rant_path(fav.rant.id), class: 'rant-body' do %>
         <p><%= hash_tagger(fav.rant.rant) %></p>
       <% end %>
-      <%= rant_favorites(fav.rant) %>
+      <div class="favorite-wrap">
+        <%= rant_favorites(fav.rant) %>
+      </div>
       <hr/>
     <% end %>
   </div>

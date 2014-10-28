@@ -33,11 +33,12 @@ module UsersHelper
     if favorite_rant(rant)
       button_to 'Unfavorite',
                 rant_favorite_path(id: current_user.id, rant_id: rant.id),
+                :class => 'unfavorite',
                 method: :delete
     else
       button_to 'Favorite',
-                rant_favorites_path(rant.id),
-                {rant_id: rant.id}
+                rant_favorites_path(id: current_user.id, rant_id: rant.id),
+                :class => 'favorite'
     end
   end
 
