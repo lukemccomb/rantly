@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
            class_name:  'FollowingRelationship'
   has_many :followers, through: :follower_relationships
 
-  validates :username, presence: true, uniqueness: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :bio, presence: true
+  validates :username, presence: true, uniqueness: true, length: { maximum: 155 }
+  validates :first_name, presence: true, length: { maximum: 155 }
+  validates :last_name, presence: true, length: { maximum: 155 }
+  validates :bio, presence: true, length: { maximum: 255 }
   validates :rate, presence: true
 
 end
