@@ -8,32 +8,25 @@
   background-color: grey;
   padding: 0% 1% 5% 1%;
   color: white;
-  display: inline-block;
   z-index: 0;
   overflow: scroll;
-  h3 {
-    text-align: justify;
-    width: 100%;
-  }
-
-  img {
-    width: 50%;
-    display: inline-block;
-  }
-
   .thumbnail {
-    width: auto;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     margin-top: 45%;
-    padding-left: 25%;
+    text-align: center;
+    img {
+      width: 50%;
+    }
+    a:hover {
+      color: chartreuse;
+    }
   }
 }
 
 .rant-form {
   height: 100%;
   text-align: center;
+  line-height: 150%;
   .new-rant-label {
     text-align: left;
     margin-top: 3%;

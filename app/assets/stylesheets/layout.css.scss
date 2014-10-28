@@ -37,7 +37,7 @@ header {
   padding-right: 3%;
   color: white;
   background-color: #272728;
-  border-right: 1px solid lawngreen;
+  border-right: 1px solid #7cf40e;
   :visited {
     color: white;
   }
@@ -46,6 +46,9 @@ header {
     height: 33px;
     a {
     text-decoration: none;
+    }
+    a:hover {
+      color: chartreuse;
     }
   }
 }
@@ -56,7 +59,7 @@ p {
 
 
 .main-nav {
-  color: #3e900e;
+  color: #7cf40e;
   position: fixed;
   padding-bottom: 1%;
   padding-right: 2%;
@@ -69,10 +72,10 @@ p {
   z-index: 1;
   background-color: #272728;
   nav {
-    display: inline-block;
     position: fixed;
     top: 35px;
-    right: 33.5%;
+    width: 100%;
+    text-align: center;
     a {
       text-decoration: none;
       color: #58cb15;
