@@ -1,18 +1,25 @@
 module UsersHelper
   def follow_button user
-    button_to 'Follow', user_follow_path(user)
+    button_to 'Follow',
+              user_follow_path(user),
+              {:class => 'follow'}
   end
 
   def unfollow_button user
-    button_to 'Unfollow', user_unfollow_path(user)
+    button_to 'Unfollow',
+              user_unfollow_path(user),
+              {:class => 'unfollow'}
   end
 
   def dash_follow_button user
-    button_to 'Follow', user_follow_path(user), {user_id: user.id}
+    button_to 'Follow', user_follow_path(user),
+              {:class => 'follow', user_id: user.id}
+
   end
 
   def dash_unfollow_button user
-    button_to 'Unfollow', user_unfollow_path(user), {user_id: user.id}
+    button_to 'Unfollow', user_unfollow_path(user),
+              {:class => 'unfollow', user_id: user.id}
   end
 
   def following_user user_id

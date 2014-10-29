@@ -5,8 +5,6 @@
     <hr/>
     <br/>
     <%= render partial: "searches/search" %>
-    <br/>
-    <h2>Rant Results</h2>
     <%= render @search.rants %>
     <% @search.users.each do |user| %>
       <%= render user.rants %>

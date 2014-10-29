@@ -33,6 +33,14 @@
   textarea {
     width: 90%;
     height: 30vh;
+    border: 1px solid gray;
+    border-radius: 3px;
+    font-size: 110%;
+  }
+  input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    font-size: 120%;
   }
   .rant-button {
     background-color: green;
@@ -40,6 +48,71 @@
     font-size: 115%;
     width: 92%;
     margin-right: 1.8%;
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+    &:hover {
+      background-color: #272728;
+      color: #7cf40e;
+      border: 1px solid #7cf40e;
+    }
+  }
+}
+
+.rant-feed {
+  text-align: center;
+  width: 68.8%;
+  position: fixed;
+  padding-right: 2%;
+  padding-left: 2%;
+  overflow: scroll;
+  display: block;
+  top: 15%;
+  right: 0;
+  max-height: 85.5%;
+  h1 {
+    text-align: center;
+    font-size: 350%;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 200%;
+  }
+  hr {
+    border: 1px solid black;
+  }
+  h3 {
+    a {
+      text-decoration: none;
+      color: #0022d1;
+    }
+  }
+  .follow {
+    background-color: white;
+    color: #00ae08;
+    font-size: 90%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    &:hover {
+      background-color: #58cb15;
+      color: #0028ff;
+      border: 1px solid #7cf40e;
+    }
+  }
+  .unfollow {
+    background-color: white;
+    color: #0022d1;
+    font-size: 90%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    &:hover {
+      background-color: #0028ff;
+      color: #7cf40e;
+      border: 1px solid #7cf40e;
+    }
   }
 }
 
@@ -69,14 +142,23 @@
 
 .rant-body {
     text-decoration: none;
+    width: 80%;
     margin: 0 auto;
     color: black;
-    :visited {
+    font-weight: lighter;
+    text-align: left;
+    padding: 1% 0 1% 0;
+    &:visited {
       color: black;
     }
-    .hashtag-link {
-      color: blue;
+    a {
+      text-decoration: none;
     }
+}
+
+.hashtag-link {
+  color: #0022d1;
+  text-decoration: none;
 }
 
 .comments {
@@ -101,17 +183,29 @@
 
 .favorite-wrap {
   text-align: right;
+  display: inline-block;
   .favorite {
     background-color: forestgreen;
     color: white;
     font-size: 90%;
-    border-radius: 9px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    &:hover {
+      background-color: #58cb15;
+      color: #0028ff;
+      border: 1px solid #7cf40e;
+    }
   }
   .unfavorite {
     background-color: #001aa5;
     color: white;
     font-size: 90%;
-    border-radius: 9px;
-
+    border: 1px solid gray;
+    border-radius: 3px;
+    &:hover {
+      background-color: #0028ff;
+      color: #7cf40e;
+      border: 1px solid #7cf40e;
+    }
   }
 }

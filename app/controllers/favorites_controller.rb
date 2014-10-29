@@ -9,6 +9,8 @@ class FavoritesController < ApplicationController
 
   def show
     @rant = Rant.new
+    @favorites = []
+    current_user.favorites.each { |fav| @favorites << fav.rant }
   end
 
   def destroy

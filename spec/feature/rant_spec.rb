@@ -3,20 +3,14 @@ require 'capybara/rails'
 
 feature "index page" do
   before :each do
-    visit '/'
-    click_on "JOIN"
-    expect(page).to have_content("Register Username Password First name Last name")
-    fill_in "Username", with: "user"
-    fill_in "Password", with: "password"
-    fill_in "First name", with: "sample"
-    fill_in "Last name", with: "user"
-    fill_in "Bio", with: "sample bio"
-    choose('Weekly')
-    click_on "REGISTER"
-    click_on "Login"
-    fill_in "Username", with: "user"
-    fill_in "Password", with: "password"
-    click_on "LOGIN"
+
+    user = {username: 'username',
+            password: 'password',
+            first_name: 'sample',
+            last_name: 'user',
+            bio: 'sample bio',
+            rate: 'Weekly'}
+    register_user(user)
 
     @rant = "Sometimes I order a beet salad, so when the waiter comes and
                             lays down my salad I can say 'thanks for laying down those

@@ -3,18 +3,6 @@
   <div class="rant-feed">
     <h1>Favorites</h1>
     <hr/>
-    <% current_user.favorites.each do |fav| %>
-      <h2><%= hash_tagger(fav.rant.title) %></h2>
-
-      <h3>  <%= link_to "#{fav.rant.user.first_name} #{fav.rant.user.last_name}", user_path(fav.rant.user.id) %><br/>
-      </h3>
-      <%= link_to rant_path(fav.rant.id), class: 'rant-body' do %>
-        <p><%= hash_tagger(fav.rant.rant) %></p>
-      <% end %>
-      <div class="favorite-wrap">
-        <%= rant_favorites(fav.rant) %>
-      </div>
-      <hr/>
-    <% end %>
+    <%= render @favorites %>
   </div>
 </div>
