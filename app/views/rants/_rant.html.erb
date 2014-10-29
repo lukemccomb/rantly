@@ -1,7 +1,7 @@
 <%= div_for rant do %>
   <h2><%= hash_tagger(rant.title) %></h2><br/>
   <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %>
-    <% if rant.user != current_user %>
+    <% if rant.user != current_user && !request.original_url.include?("/users/#{rant.user_id}") %>
       <% if following_user(rant.user_id) %>
         <%= dash_unfollow_button(rant.user) %>
       <% else %>

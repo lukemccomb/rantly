@@ -14,14 +14,12 @@ feature "dashboard" do
 
     user2 = {}
 
-
+    user.map { |key, value| user2[key] = value + "2" }
+    user2[:rate] = "Weekly"
 
     @rant = "Sometimes I order a beet salad, so when the waiter comes and
                             lays down my salad I can say 'thanks for laying down those
                             funky beets'. It's an expensive joke because I don't even like beets."
-
-    user.map { |key, value| user2[key] = value + "2" }
-    user2[:rate] = "Weekly"
 
     fill_in "A rant about", with: "first rant"
     fill_in "Rant", with: @rant

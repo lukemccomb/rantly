@@ -17,5 +17,6 @@ module UserHelpers
     fill_in "Password", with: user[:password]
     click_on "LOGIN"
   end
+
 end
 
