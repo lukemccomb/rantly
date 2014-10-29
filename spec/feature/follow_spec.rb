@@ -15,8 +15,6 @@ feature "dashboard" do
     user2 = {}
 
 
-
-
     user.map { |key, value| user2[key] = value + "2" }
     user2[:rate] = "Weekly"
 
@@ -45,6 +43,34 @@ feature "dashboard" do
     click_on "Following"
     expect(page).to have_content("sample")
   end
-  
+
+  scenario "user can unfollow a followed user" do
+    click_on "sample user"
+    click_on "Follow"
+    click_on "Unfollow"
+    click_on "Following"
+    within(".rant-feed") do
+      expect(page).to have_no_content("sample")
+    end
+  end
+
+  scenario "user can unfollow a followed user from dash" do
+    click_on "Follow"
+    click_on "Unfollow"
+    click_on "Following"
+    within(".rant-feed") do
+      expect(page).to have_no_content("sample")
+    end
+  end
+
+  scenario "user can unfollow a followed user from Following view" do
+    click_on "sample user"
+    click_on "Follow"
+    click_on "Following"
+    click_on "Unfollow"
+    within(".rant-feed") do
+      expect(page).to have_no_content("sample")
+    end
+  end
 
 end
