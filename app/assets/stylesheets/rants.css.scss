@@ -168,6 +168,7 @@
   textarea {
     width: 99%;
     font-size: 110%;
+    border-radius: 3px;
   }
   .rant-button {
     background-color: green;
@@ -175,6 +176,13 @@
     font-size: 95%;
     width: 25%;
     float: right;
+    border: 1px solid gray;
+    border-radius: 3px;
+    &:hover {
+      background-color: #58cb15;
+      color: #0028ff;
+      border: 1px solid #7cf40e;
+    }
   }
   hr {
     width: 80%;
