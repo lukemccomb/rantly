@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rails'
 
-feature "dashboard" do
+feature "follow" do
 
   before :each do
     user = {username: 'username',
