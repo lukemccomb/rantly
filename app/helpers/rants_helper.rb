@@ -12,6 +12,12 @@ module RantsHelper
     end
   end
 
+  def markdown(text)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                        autolink: true, tables: true, hard_wrap: true)
+    markdown.render(text).html_safe
+  end
+
     private
 
     def link_hashtags text
