@@ -10,7 +10,7 @@
     <% end %>
   <br/>
   <%= link_to rant_path(rant.id) do %>
-    <p class="rant-body"><%= hash_tagger(rant.rant) %></p>
+    <p class="rant-body"><%= markdown(hash_tagger(rant.rant)) %></p>
   <% end %>
   <div class="favorite-wrap">
   <%= rant_favorites(rant) %>
