@@ -12,7 +12,7 @@
   <% if current_user.admin %>
     <div class="main-nav">
       <nav>
-        <%= link_to "Dashboard", dashboard_path %> |
+        <%= link_to "Dashboard", admin_dashboard_path %> |
         <%= link_to "Rants", rants_path %> |
         <%= link_to "Users", users_path %>
       </nav>
@@ -30,11 +30,7 @@
         <%= link_to "Favorites", user_favorites_path(current_user.id) %> |
         <%= link_to "Search", new_search_path %>
       </nav>
-      <%= link_to session_path, method: :delete do %>
-        <div class="logout-box logout-link">
-          LOGOUT
-        </div>
-      <% end %>
+      <%= link_to "LOGOUT", session_path,{ method: :delete, class: "logout-box logout-link"} %>
     </div>
   <% end %>
 <% end %>

@@ -1,5 +1,9 @@
 class RantsController < ApplicationController
 
+  def index
+    @rants = Rant.all
+  end
+
   def new
     @new_rant = Rant.new
   end
