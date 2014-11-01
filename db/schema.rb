@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031195224) do
+ActiveRecord::Schema.define(version: 20141101212545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.string   "comment"
+    t.text     "comment"
     t.integer  "user_id"
     t.integer  "rant_id"
     t.datetime "created_at"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20141031195224) do
   add_index "following_relationships", ["follower_id"], name: "index_following_relationships_on_follower_id", using: :btree
 
   create_table "rants", force: true do |t|
-    t.string   "rant"
+    t.text     "rant"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

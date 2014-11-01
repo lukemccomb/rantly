@@ -5,7 +5,7 @@ class Rant < ActiveRecord::Base
   has_many :comments
 
   validates :title, presence: true, length: { maximum: 50 }
-  validates :rant, presence: true, length: { minimum: 140, maximum: 255 }
+  validates :rant, presence: true, length: { minimum: 140 }
 
   def self.search term
     self.where("rant iLIKE ?", "%#{term}%")

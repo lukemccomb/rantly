@@ -23,7 +23,7 @@
       <h3>Comments</h3>
       <% if @this_rant.comments.length > 0 %>
         <% @this_rant.comments.each do |comment| %>
-          <p><%= markdown(comment.comment) %></p>
+          <p class="rant-body"><%= comment.comment %></p>
           <h4>By <%= comment.user.username %></h4>
           <% if comment.user == current_user %>
             <%= button_to "DELETE", rant_comment_path(id: comment.id, rant_id: @this_rant.id), method: :delete  %>

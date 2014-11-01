@@ -154,6 +154,24 @@
     }
 }
 
+.rant-body {
+  text-decoration: none;
+  width: 80%;
+  margin: 0 auto;
+  color: black;
+  font-weight: lighter;
+  text-align: left;
+  padding: 1% 0 1% 0;
+  display: block;
+  &:visited {
+    color: black;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
 .hashtag-link {
   color: #0022d1;
   text-decoration: none;
