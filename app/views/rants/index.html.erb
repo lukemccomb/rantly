@@ -1,6 +1,21 @@
 <div class="dash-wrap">
-  <div class="rant-feed">
+  <div class="admin-dash">
     <h1>Rants</h1>
-      <%= render @rants %>
+    <table class="user-table">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Title</th>
+        <th>Actions</th>
+      </tr>
+      <% @rants.each do |rant| %>
+        <tr>
+          <td><%= rant.user.first_name %> <%= rant.user.last_name %></td>
+          <td><%= rant.user.username %></td>
+          <td><%= rant.title %></td>
+          <td><%= link_to "View", rant_path(rant.id) %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>

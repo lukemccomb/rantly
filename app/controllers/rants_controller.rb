@@ -1,7 +1,7 @@
 class RantsController < ApplicationController
 
   def index
-    @rants = Rant.all
+    @rants = Rant.all.order("created_at DESC")
   end
 
   def new
