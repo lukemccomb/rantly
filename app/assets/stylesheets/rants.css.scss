@@ -140,7 +140,7 @@
   }
 }
 
-.rant-body {
+.rant a p {
     text-decoration: none;
     width: 80%;
     margin: 0 auto;
@@ -151,9 +151,6 @@
     display: block;
     &:visited {
       color: black;
-    }
-    a {
-      text-decoration: none;
     }
 }
 

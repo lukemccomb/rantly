@@ -1,7 +1,7 @@
 module RantsHelper
 
   def hash_tagger text
-    link_hashtags(strip_tags(text)).html_safe
+    link_hashtags(text).html_safe
   end
 
   def rant_favorites(rant)
@@ -14,7 +14,7 @@ module RantsHelper
 
   def markdown(text)
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-                                        autolink: true, tables: true, hard_wrap: true)
+                                        autolink: true, tables: true, escape_html: true)
     markdown.render(text).html_safe
   end
 
