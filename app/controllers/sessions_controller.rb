@@ -6,12 +6,17 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:user][:username])
-    if user.admin && user.authenticate(params[:user][:password])
-      sign_in(user)
-      redirect_to admin_dashboard_path
-    elsif user && user.authenticate(params[:user][:password])
-      sign_in(user)
-      redirect_to dashboard_path
+    if user && user.authenticate(params[:user][:password])
+      if user.admin
+        sign_in(user)
+        redirect_to admin_dashboard_path
+      elsif user.disabled
+        flash[:notice] = "Your account has been disabled."
+        redirect_to main_path
+      else
+        sign_in(user)
+        redirect_to dashboard_path
+      end
     else
       @user = User.new
       @user.errors[:base] << "Username / password is invalid"
