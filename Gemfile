@@ -28,6 +28,8 @@ gem 'redcarpet', '~> 3.2.0'
 gem 'cloudinary'
 #CarrierWave
 gem 'carrierwave'
+#dot-env
+gem 'dotenv-rails', '~> 0.11.1'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

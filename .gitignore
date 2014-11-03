@@ -17,3 +17,6 @@
 
 # ignore cloudinary.yml file
 cloudinary.yml
+
+# ignore .env files
+.env
