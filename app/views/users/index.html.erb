@@ -5,11 +5,15 @@
       <tr>
         <th>User</th>
         <th># of Rants</th>
+        <th>Disabled</th>
+        <th>Actions</th>
       </tr>
     <% @users.each do |user| %>
         <tr>
           <td><%= user.username %></td>
           <td><%= user.rants.length %></td>
+          <td><p><%= disabled(user) %></p></td>
+          <td><%= user_disable(user) %></td>
         </tr>
     <% end %>
     </table>

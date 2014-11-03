@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :comments
 
+  belongs_to :disable
+
   has_many :followed_user_relationships,
            foreign_key: :follower_id,
            class_name: 'FollowingRelationship'

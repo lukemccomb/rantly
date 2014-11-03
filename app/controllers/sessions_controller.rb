@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if user.admin
         sign_in(user)
         redirect_to admin_dashboard_path
-      elsif user.disabled
+      elsif disabled_user?(user)
         flash[:notice] = "Your account has been disabled."
         redirect_to main_path
       else
@@ -27,6 +27,12 @@ class SessionsController < ApplicationController
   def destroy
     session.destroy
     redirect_to :main
+  end
+
+  private
+
+  def disabled_user?(user)
+    Disable.find_by(user_id: user.id)
   end
 
 end

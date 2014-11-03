@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get 'favorites' =>  'favorites#show'
     post 'follow' => 'following_relationships#create'
     post 'unfollow' => 'following_relationships#destroy'
+
+    resources :disables, only: [:create, :destroy]
   end
 
   resource :search, only: [:new, :show]
