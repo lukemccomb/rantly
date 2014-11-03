@@ -35,9 +35,11 @@
           <%= form.text_area :bio %>
         </div>
         <br/>
+
         <p><%= form.label :rate, "How often do you rant?" %></p>
         <%= @user.errors.full_messages_for(:rate).first %>
         <br/>
+
         <div class="daily">
           <%= form.radio_button(:rate, "daily") %>
           <%= form.label(:rate_daily, "Daily") %>
@@ -50,7 +52,15 @@
           <%= form.radio_button(:rate, "monthly") %>
           <%= form.label(:rate_monthly, "Monthly") %>
         </div>
-        <br/>
+        <div class="image-upload">
+          <div class="user-image">
+            <%= image_tag(current_user.image_url, :class => 'thumb') %>
+          </div>
+          <br/>
+          <%= form.label :image, "Upload a new profile picture:" %>
+          <br/>
+          <%= form.file_field(:image) %>
+        </div>
       </div>
       <div class="reg-button">
         <%= form.submit "UPDATE" %>

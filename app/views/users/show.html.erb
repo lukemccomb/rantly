@@ -2,6 +2,7 @@
   <%= render partial: "layouts/rant_console" %>
   <div class="rant-feed">
     <div class="user-rants">
+      <%= image_tag(@user.image.to_s) %>
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
         <% unless following_user(@user) %>
           <%= follow_button @user %>

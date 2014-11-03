@@ -25,4 +25,6 @@ class User < ActiveRecord::Base
   validates :rate, presence: true
   validates :password, length: { minimum: 8 }, allow_nil: true
 
+  mount_uploader :image, ImageUploader
+
 end

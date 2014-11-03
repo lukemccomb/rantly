@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(allowed_params)
+    if @user.update_attributes(allowed_params)
       redirect_to dashboard_path
     else
       render :edit
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   private
 
   def allowed_params
-    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :rate)
+    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :rate, :image)
   end
 
 end

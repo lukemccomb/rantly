@@ -6,6 +6,8 @@
   background-color: gray;
   height: 100%;
   position: relative;
+  display: block;
+  padding-bottom: 10%;
   h1 {
     font-size: 150%;
   }
@@ -17,8 +19,7 @@
   top: 16%;
   left: 25%;
   background-color: white;
-  height: auto;
-
+  max-height: 98%;
   .username, .password, .first-n, .last-n {
     width: 49%;
     display: inline-block;

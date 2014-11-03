@@ -51,6 +51,12 @@
           <%= form.label(:rate_monthly, "Monthly") %>
         </div>
         <br/>
+        <br/>
+        <div class="image-upload">
+          <%= form.label :image, "Upload a profile picture:" %>
+          <br/>
+          <%= form.file_field :image %>
+        </div>
       </div>
       <div class="reg-button">
         <%= form.submit "REGISTER" %>

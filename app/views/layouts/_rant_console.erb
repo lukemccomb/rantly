@@ -1,6 +1,6 @@
 <div class="new-rant-wrap">
   <div class="thumbnail">
-    <%= image_tag 'jeff.jpg' %>
+    <%= image_tag(current_user.image_url, :alt => current_user.username) %>
     <h3 class="ranter-name"><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user.id) %></h3>
   </div>
   <hr/>

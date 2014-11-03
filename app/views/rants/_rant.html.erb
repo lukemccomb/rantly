@@ -1,4 +1,7 @@
 <%= div_for rant do %>
+  <div class="user-image">
+    <%= image_tag(rant.user.image_url, :class => 'thumb') %>
+  </div>
   <h2><%= hash_tagger(rant.title) %></h2><br/>
   <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %>
     <% if rant.user != current_user && !request.original_url.include?("/users/#{rant.user_id}") %>
