@@ -7,7 +7,9 @@ class Rant < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 50 }
   validates :rant, presence: true, length: { minimum: 140 }
 
-  default_scope {where( spam: false)}
+  scope :not_spam, -> {where( spam: false)}
+
+  scope :spam, -> { where(spam: true) }
 
   def self.search term
     self.where("rant iLIKE ?", "%#{term}%")

@@ -1,7 +1,7 @@
 <div class="dash-wrap">
   <div class="admin-dash">
     <h1>Rants</h1>
-    <%= link_to "SPAM", spam_path %>
+    <%= link_to "All Rants", rants_path %>
     <table class="user-table">
       <tr>
         <th>Name</th>
@@ -9,12 +9,13 @@
         <th>Title</th>
         <th>Actions</th>
       </tr>
-      <% @rants.each do |rant| %>
+      <% @spam.each do |rant| %>
         <tr>
           <td><%= rant.user.first_name %> <%= rant.user.last_name %></td>
           <td><%= rant.user.username %></td>
           <td><%= rant.title %></td>
-          <td><%= link_to "View", rant_path(rant.id) %></td>
+          <td><%= link_to "Not spam", rant_path(rant.id), method: :put %></td>
+          <td><%= link_to "Delete", rant_path(rant.id), method: :delete %></td>
         </tr>
       <% end %>
     </table>

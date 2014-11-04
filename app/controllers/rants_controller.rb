@@ -36,8 +36,17 @@ class RantsController < ApplicationController
 
   def update
     @this_rant = Rant.find_by(id: params[:id])
-    @this_rant.update_attributes(spam: params[:spam])
-    redirect_to dashboard_path
+     if @this_rant.spam
+       @this_rant.spam = false
+     else
+       @this_rant.spam = true
+     end
+    @this_rant.save!
+    if current_user.admin == true
+      redirect_to spam_path
+    else
+      redirect_to dashboard_path
+    end
   end
 
   private
