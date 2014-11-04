@@ -7,6 +7,9 @@
       <%= rant_favorites(@this_rant) %>
     </div>
     <hr/>
+    <div class="user-image">
+      <%= image_tag(@this_rant.user.image_url, :class => 'thumb') %>
+    </div>
     <h3>
       By <%= link_to "#{@this_rant.user.first_name.capitalize}
                      #{@this_rant.user.last_name.capitalize}",

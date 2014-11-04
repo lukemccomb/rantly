@@ -22,7 +22,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :thumbnail do
     process :eager => true
-    resize_to_fit(50, 50)
+    resize_to_fit(50, 100)
   end
 
   # Override the directory where uploaded files will be stored.
