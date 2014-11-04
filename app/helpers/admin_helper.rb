@@ -2,7 +2,7 @@ module AdminHelper
 
   def disabled(user)
     if Disable.find_by(user_id: user.id)
-      "true"
+      "✔"
     end
   end
 

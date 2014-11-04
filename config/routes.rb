@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resource :search, only: [:new, :show]
   resources :hashtags, only: [:show]
 
-  resources :rants, only: [:index, :create, :destroy, :show] do
+  resources :rants, only: [:index, :create, :destroy, :show, :update] do
     resources :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end

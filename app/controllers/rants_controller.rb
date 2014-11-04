@@ -34,6 +34,12 @@ class RantsController < ApplicationController
     @comment = Comment.new
   end
 
+  def update
+    @this_rant = Rant.find_by(id: params[:id])
+    @this_rant.update_attributes(spam: params[:spam])
+    redirect_to dashboard_path
+  end
+
   private
 
   def allowed_params

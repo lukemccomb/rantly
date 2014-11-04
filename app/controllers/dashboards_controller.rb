@@ -6,7 +6,4 @@ class DashboardsController < ApplicationController
     @rants = Rant.where.not(user_id: current_user.id)
   end
 
-  private
-
-
 end

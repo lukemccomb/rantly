@@ -6,6 +6,7 @@
     <div class="favorite-wrap">
       <%= rant_favorites(@this_rant) %>
     </div>
+    <%= button_to "SPAM", rant_path(@this_rant.id), method: :put %>
     <hr/>
     <div class="user-image">
       <%= image_tag(@this_rant.user.image_url, :class => 'thumb') %>
