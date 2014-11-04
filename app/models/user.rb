@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  mount_uploader :image, ImageUploader
+
   has_many :rants
   has_many :favorites
   has_many :comments
@@ -18,13 +20,14 @@ class User < ActiveRecord::Base
            class_name:  'FollowingRelationship'
   has_many :followers, through: :follower_relationships
 
+
   validates :username, presence: true, uniqueness: true, length: { maximum: 155 }
   validates :first_name, presence: true, length: { maximum: 155 }
   validates :last_name, presence: true, length: { maximum: 155 }
   validates :bio, presence: true, length: { maximum: 255 }
   validates :rate, presence: true
   validates :password, length: { minimum: 8 }, allow_nil: true
+  validates :image, :presence => true
 
-  mount_uploader :image, ImageUploader
 
 end

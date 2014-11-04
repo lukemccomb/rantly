@@ -54,6 +54,8 @@
         <br/>
         <div class="image-upload">
           <%= form.label :image, "Upload a profile picture:" %>
+          <%= form.hidden_field(:image_cache) %>
+          <%= @user.errors.full_messages_for(:image).first %>
           <br/>
           <%= form.file_field :image %>
         </div>
