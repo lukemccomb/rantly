@@ -153,7 +153,8 @@
 .thumb {
   width: 90%;
   float: left;
-  padding: 5%;
+  padding-top: 10%;
+  padding-bottom: 10%;
   border-radius: 15px;
 }
 
@@ -164,10 +165,11 @@
 }
 
 .user-image {
-  width: 10%;
+  width: 15%;
   display: inline-block;
-  padding: 3%;
+  padding-right: 5%;
   float: left;
+  max-width: 90px;
 }
 
 .user-show-image {

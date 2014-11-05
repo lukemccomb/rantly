@@ -1,9 +1,7 @@
 <%= div_for rant do %>
   <div class="user-image">
+    <%= link_to "#{rant.user.first_name}", user_path(rant.user.id) %>
     <%= image_tag(rant.user.image_url(:thumbnail), :class => 'thumb') %>
-  </div>
-  <h2><%= hash_tagger(rant.title) %></h2><br/>
-  <%= link_to "#{rant.user.first_name} #{rant.user.last_name}", user_path(rant.user.id) %>
     <% if rant.user != current_user && !request.original_url.include?("/users/#{rant.user_id}") %>
       <% if following_user(rant.user_id) %>`
         <%= dash_unfollow_button(rant.user) %>
@@ -11,12 +9,12 @@
         <%= dash_follow_button(rant.user) %>
       <% end %>
     <% end %>
+  </div>
+  <h2><%= rant.title %></h2><br/>
   <br/>
-  <p>
     <%= link_to rant_path(rant.id) do %>
-      <%= markdown(hash_tagger(rant.rant)) %>
+      <%= markdown(rant.rant) %>
     <% end %>
-  </p>
   <div class="favorite-wrap">
   <%= rant_favorites(rant) %>
   </div>

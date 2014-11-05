@@ -60,7 +60,7 @@
 
 .rant-feed {
   text-align: center;
-  width: 68.8%;
+  width: 69%;
   position: fixed;
   padding-right: 2%;
   padding-left: 2%;
@@ -78,8 +78,8 @@
     }
   }
   h2 {
-    text-align: center;
-    font-size: 200%;
+    text-align: left;
+    font-size: 180%;
   }
   hr {
     border: 1px solid black;
@@ -121,18 +121,21 @@
 }
 
 .rant {
+  display: block;
   margin-top: 2%;
   margin-bottom: 2%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 3%;
+  margin-right: 3%;
   hr {
     border: .1em dashed #272728;
+    display: block;
+    margin-top: 3%;
   }
   a {
     text-decoration: none;
-    color: black;
+    color: grey;
     :visited {
-      color: black;
+      color: dimgrey;
     }
   }
   .hashtag-link {
@@ -142,16 +145,17 @@
 
 .rant a p {
     text-decoration: none;
-    width: 80%;
-    margin: 0 auto;
+    width: 65%;
     color: black;
     font-weight: lighter;
     text-align: left;
     padding: 1% 0 1% 0;
-    display: block;
+    display: inline-block;
+    position: relative;
     &:visited {
       color: black;
     }
+  padding-bottom: 5%;
 }
 
 .rant-body {
@@ -201,13 +205,16 @@
     }
   }
   hr {
-    width: 80%;
+    width: 100%;
   }
 }
 
 .favorite-wrap {
   text-align: right;
-  display: inline-block;
+  display: block;
+  width: 15%;
+  float: right;
+  margin-top: 11.5%;
   .favorite {
     background-color: forestgreen;
     color: white;
