@@ -36,7 +36,7 @@
         <%= link_to "Favorites", user_favorites_path(current_user.id) %> |
         <%= link_to "Search", new_search_path %>
       </nav>
-      <%= link_to "LOGOUT", session_path,{ method: :delete, class: "logout-box logout-link"} %>
+      <%= link_to "LOGOUT", session_path, { method: :delete, class: 'logout-link logout-box'} %>
     </div>
   <% end %>
 <% end %>
