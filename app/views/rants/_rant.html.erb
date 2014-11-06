@@ -3,14 +3,14 @@
     <%= link_to "#{rant.user.first_name}", user_path(rant.user.id) %>
     <%= image_tag(rant.user.image_url(:thumbnail), :class => 'thumb') %>
     <% if rant.user != current_user && !request.original_url.include?("/users/#{rant.user_id}") %>
-      <% if following_user(rant.user_id) %>`
+      <% if following_user(rant.user_id) %>
         <%= dash_unfollow_button(rant.user) %>
       <% else %>
         <%= dash_follow_button(rant.user) %>
       <% end %>
     <% end %>
   </div>
-  <h2><%= rant.title %></h2><br/>
+  <h2><%= rant.title %></h2>
   <br/>
     <%= link_to rant_path(rant.id) do %>
       <%= markdown(rant.rant) %>
