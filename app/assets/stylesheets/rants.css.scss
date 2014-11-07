@@ -228,6 +228,12 @@
       border: 1px solid #7cf40e;
     }
   }
+  #favorite-show {
+    display: inline-block;
+  }
+//  #favorite-hide {
+//    display: none;
+//  }
   .unfavorite {
     background-color: #001aa5;
     color: white;
@@ -239,5 +245,11 @@
       color: #7cf40e;
       border: 1px solid #7cf40e;
     }
+  }
+//  #unfavorite-show {
+//    display: inline-block;
+//  }
+  #unfavorite-hide {
+    display: none;
   }
 }

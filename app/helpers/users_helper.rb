@@ -31,9 +31,7 @@ module UsersHelper
   end
 
   def unfavorite_button rant
-    button_to 'Unfavorite',
-              rant_favorite_path(rant_id: rant.id),
-              method: :delete
+    button_to 'Unfavorite', rant_favorite_path(rant_id: rant.id)
   end
 
   def dash_favorite_button rant
@@ -41,11 +39,30 @@ module UsersHelper
       button_to 'Unfavorite',
                 rant_favorite_path(id: current_user.id, rant_id: rant.id),
                 :class => 'unfavorite',
-                method: :delete
+                # :id => 'unfavorite-show',
+                method: :delete,
+                # remote: true,
+                data: { rant_id: rant.id, user_id: current_user.id }
+      # button_to 'Favorite',
+      #           rant_favorites_path(id: current_user.id, rant_id: rant.id),
+      #           :class => 'favorite',
+      #           # id: 'favorite-hide',
+      #           remote: true,
+      #           data: { rant_id: rant.id, user_id: current_user.id }
     else
       button_to 'Favorite',
                 rant_favorites_path(id: current_user.id, rant_id: rant.id),
-                :class => 'favorite'
+                :class => 'favorite',
+                # id: 'favorite-show',
+                # remote: true,
+                data: { rant_id: rant.id, user_id: current_user.id }
+      # button_to 'Unfavorite',
+      #           rant_favorite_path(id: current_user.id, rant_id: rant.id),
+      #           :class => 'unfavorite',
+      #           # :id => 'unfavorite-hide',
+      #           method: :delete,
+      #           remote: true,
+      #           data: { rant_id: rant.id, user_id: current_user.id }
     end
   end
 
