@@ -17,5 +17,26 @@
       <p><%= @user.bio %></p>
       <%= render @user_rants %>
     </div>
+    <div class="comments">
+      <hr/>
+      <h3>Comments</h3>
+      <% if @user.user_comments.length > 0 %>
+        <% @user.user_comments.each do |comment| %>
+          <p class="rant-body"><%= comment.comment %></p>
+          <h4>By <%= comment.commenter.username %></h4>
+          <% if comment.commenter == current_user %>
+            <%= button_to "DELETE", user_user_comment_path(id: comment.id, user_id: @user.id), method: :delete  %>
+          <% end %>
+          <hr/>
+        <% end %>
+      <% else %>
+        <p>No comments yet!</p>
+      <% end %>
+      <%= form_for [@user, @comment] do |form| %>
+        <%= form.text_area :comment, placeholder: 'Enter comment here...' %>
+        <br/>
+        <%= form.submit "RANT BACK", :class => 'rant-button' %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :rants
   has_many :favorites
   has_many :comments
+  has_many :user_comments
 
   belongs_to :disable
 

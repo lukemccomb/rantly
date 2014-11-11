@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post 'unfollow' => 'following_relationships#destroy'
 
     resources :disables, only: [:create, :destroy]
+    resources :user_comments, only: [:create, :destroy]
   end
 
   resource :search, only: [:new, :show]

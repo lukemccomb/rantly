@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @comment = UserComment.new
     @rant = Rant.new
     @user = User.find_by(id: params[:id])
     @user_rants = @user.rants.sort { |ranta, rantb| rantb.favorites.length <=> ranta.favorites.length }
