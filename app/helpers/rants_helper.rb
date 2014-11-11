@@ -18,6 +18,14 @@ module RantsHelper
     markdown.render(text).html_safe
   end
 
+  def three_hundo(text)
+    if text.length > 300
+      text[0..299] + "..."
+    else
+      text
+    end
+  end
+
     private
 
     def link_hashtags text

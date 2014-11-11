@@ -13,7 +13,7 @@
   <h2><%= rant.title %></h2>
   <br/>
     <%= link_to rant_path(rant.id) do %>
-      <%= markdown(rant.rant) %>
+      <%= markdown(three_hundo(rant.rant)) %>
     <% end %>
   <div class="favorite-wrap">
   <%= rant_favorites(rant) %>
