@@ -1,3 +1,6 @@
+<script type="text/javascript">
+  window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+</script>
 <div class="dash-wrap">
   <%= render partial: "layouts/rant_console" %>
   <div class="rant-feed">
@@ -6,7 +9,13 @@
     <div class="favorite-wrap">
       <%= rant_favorites(@this_rant) %>
     </div>
-    <%= button_to "SPAM", rant_path(@this_rant.id), method: :put %>
+    <div class="spam-tweet">
+      <a class="twitter-share-button"
+         href="https://twitter.com/share" data-url="<%= request.url %>" data-text="Interesting Read: <%= @this_rant.title %>">
+        Tweet
+      </a>
+      <%= button_to "SPAM", rant_path(@this_rant.id), method: :put %>
+    </div>
     <hr/>
     <div class="user-image">
       <%= image_tag(@this_rant.user.image_url, :class => 'thumb') %>
