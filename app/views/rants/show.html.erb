@@ -17,7 +17,7 @@
                      user_path(@this_rant.user.id) %>
     </h3>
     <br/>
-    <p class="rant-body"><%= hash_tagger(@this_rant.rant) %></p>
+    <p class="rant-body"><%= markdown(hash_tagger(@this_rant.rant)) %></p>
     <% if @this_rant.user_id == current_user.id %>
       <%= button_to "DELETE", rant_path(@this_rant.id), method: :delete, html: {class: "delete"} %>
     <% end %>

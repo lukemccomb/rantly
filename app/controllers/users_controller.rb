@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+      @users = User.select("users.*, COUNT(rants.id) as rant_num")
+                    .joins("LEFT JOIN rants ON rants.user_id = users.id")
+                    .group("users.id")
+                    .order("rant_num #{params[:sort] || "DESC"}")
   end
 
   def new

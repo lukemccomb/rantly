@@ -5,7 +5,8 @@
   </div>
   <hr/>
   <div class="rant-form">
-    <%= form_for @rant do |form| %>
+    <!--add remote true back in for AJAX-->
+    <%= form_for(@rant) do |form| %>
       <%= form.label :title, "A rant about" %>
       <%= @rant.errors.full_messages_for(:title).first %>
       <br/>
@@ -16,7 +17,7 @@
       <br/>
       <%= form.text_area :rant %>
       <br/>
-      <%= form.submit "RANT", :class => 'rant-button' %>
+      <%= form.submit "RANT", :class => 'rant-button', :id => 'rant-button' %>
     <% end %>
   </div>
 </div>

@@ -3,8 +3,21 @@
 //= require turbolinks
 //= require_tree .
 
-//$(document).ready(function() {
-//
+$(document).ready(function() {
+
+//  $("#rant-button").on('click', function(event) {
+//    event.preventDefault();
+//    var form = $(this).parent('form');
+//    $.ajax( {type: "POST", url: ("/rants"), data: form.serialize()})
+//      .success( function() {
+//      });
+//      window.location.reload(true);
+//  });
+
+
+
+//  Favoriting
+
 //  $("#favorite-show").on('click', function() {
 //    var rant_id = $(this).data("rant-id");
 //    $.ajax( {type: "POST", url: ("/rants/" + rant_id + "/favorites"), data: {rant_id: rant_id}})
@@ -28,4 +41,5 @@
 //    $(this).removeClass('unfavorite');
 //    $(this).addClass('favorite');
 //  });
-//});
+
+});

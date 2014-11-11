@@ -9,11 +9,11 @@ class RantsController < ApplicationController
   end
 
   def create
-    @rant = Rant.new
-    @rant = current_user.rants.build(allowed_params)
+    @rant = Rant.new(allowed_params)
+    @rant.user_id = current_user.id
     if @rant.save
       flash[:new_rant]
-      redirect_to dashboard_path
+      redirect_to :back
     else
       @user = current_user
       @rants = Rant.where.not(user_id: @user.id)

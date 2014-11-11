@@ -26,4 +26,14 @@ module AdminHelper
     end
   end
 
+  def sorting(asc_or_desc)
+    opposite, arrow = if asc_or_desc.nil? || asc_or_desc == "DESC"
+                             ["ASC", "☟"]
+                           else
+                             ["DESC", "☝"]
+                           end
+
+    link_to "#{arrow}", "#{request.path}?sort=#{opposite}"
+  end
+
 end
