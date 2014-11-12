@@ -5,8 +5,6 @@ class FavoritesController < ApplicationController
     @favorite.user_id = current_user.id
     @favorite.save
     redirect_to :back
-    # fav_number = Rant.find_by(id: params[:rant_id]).favorites.length
-    # render :json => {fav_count:  fav_number.to_s }
   end
 
   def show
@@ -20,8 +18,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.where(rant_id: params[:rant_id], user_id: current_user.id)
-    @favorite.first.destroy!
+    @favorite = Favorite.find_by(rant_id: params[:rant_id], user_id: current_user.id)
+    @favorite.destroy!
     redirect_to :back
   end
 end

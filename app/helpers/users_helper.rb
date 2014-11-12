@@ -3,23 +3,33 @@ module UsersHelper
     button_to 'Follow',
               user_follow_path(user),
               {:class => 'follow'}
+              # remote: true,
+              # data: {user_id: user.id}}
   end
 
   def unfollow_button user
     button_to 'Unfollow',
               user_unfollow_path(user),
               {:class => 'unfollow'}
+              # remote: true,
+              # data: {user_id: user.id}}
   end
 
   def dash_follow_button user
     button_to 'Follow', user_follow_path(user),
-              {:class => 'follow', user_id: user.id}
+              {:class => 'follow',
+               user_id: user.id}
+              # remote: true,
+              # data: {user_id: user.id}}
 
   end
 
   def dash_unfollow_button user
     button_to 'Unfollow', user_unfollow_path(user),
-              {:class => 'unfollow', user_id: user.id}
+              {:class => 'unfollow',
+               user_id: user.id}
+               # remote: true,
+               # data: {user_id: user.id}}
   end
 
   def following_user user_id
@@ -39,30 +49,17 @@ module UsersHelper
       button_to 'Unfavorite',
                 rant_favorite_path(id: current_user.id, rant_id: rant.id),
                 :class => 'unfavorite',
-                # :id => 'unfavorite-show',
+                :id => 'unfavorite-show',
                 method: :delete,
-                # remote: true,
-                data: { rant_id: rant.id, user_id: current_user.id }
-      # button_to 'Favorite',
-      #           rant_favorites_path(id: current_user.id, rant_id: rant.id),
-      #           :class => 'favorite',
-      #           # id: 'favorite-hide',
-      #           remote: true,
-      #           data: { rant_id: rant.id, user_id: current_user.id }
+                remote: true,
+                data: { rant_id: rant.id, id: favorite_rant(rant).id }
     else
       button_to 'Favorite',
                 rant_favorites_path(id: current_user.id, rant_id: rant.id),
                 :class => 'favorite',
-                # id: 'favorite-show',
-                # remote: true,
+                id: 'favorite-show',
+                remote: true,
                 data: { rant_id: rant.id, user_id: current_user.id }
-      # button_to 'Unfavorite',
-      #           rant_favorite_path(id: current_user.id, rant_id: rant.id),
-      #           :class => 'unfavorite',
-      #           # :id => 'unfavorite-hide',
-      #           method: :delete,
-      #           remote: true,
-      #           data: { rant_id: rant.id, user_id: current_user.id }
     end
   end
 
