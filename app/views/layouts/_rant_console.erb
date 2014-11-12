@@ -6,12 +6,12 @@
   <hr/>
   <div class="rant-form">
     <%= form_for(@rant, remote: true) do |form| %>
-      <%= form.label :title, "A rant about" %>
+      <%= form.label :title, "A rant about", :id => "rant-title" %>
       <%= @rant.errors.full_messages_for(:title).first %>
       <br/>
       <%= form.text_field :title %>
       <br/>
-      <%= form.label :rant, "Rant" %>
+      <%= form.label :rant, "Rant", :id => "rant-rant" %>
       <%= @rant.errors.full_messages_for(:rant).first %>
       <br/>
       <%= form.text_area :rant %>

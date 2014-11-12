@@ -5,7 +5,7 @@
     <hr/>
     <%= render @rants %>
     <br/>
-    <% if @mentions.length > 0  %>
+    <% if @mentions.present?  %>
       <h1>Mentions</h1>
       <hr/>
       <%= render @mentions %>

@@ -18,7 +18,8 @@ class RantsController < ApplicationController
       @user = current_user
       @rants = Rant.where.not(user_id: @user.id)
       @user_rants = Rant.where(user_id: @user.id)
-      render 'dashboards/show'
+      render :json =>  { errors: { title_errors: @rant.errors.full_messages_for(:title).first,
+                        rant_errors: @rant.errors.full_messages_for(:rant).first }}
     end
   end
 

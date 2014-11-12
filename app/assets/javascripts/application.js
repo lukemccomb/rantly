@@ -6,15 +6,17 @@ $(document).ready(function() {
 
   $("#rant-button").on('click', function(event) {
     event.preventDefault();
+    $('.errors').remove();
     var form = $(this).parent('form');
     $.ajax( {type: "POST", url: ("/rants"), data: form.serialize()})
-      .success( function() {
-        window.location.reload(true);
+      .success( function(data) {
+        if(data.errors) {
+          $('#rant-title').append(' <span class="errors">' + data.errors.title_errors + '</span>');
+          $('#rant-rant').append(' <span class="errors">' + data.errors.rant_errors + '</span>');
+        } else {
+          window.location.reload(true)
+        }
       });
-//      .error( function() {
-//        debugger;
-//        arguments
-//      });
   });
 
 //  Favoriting
