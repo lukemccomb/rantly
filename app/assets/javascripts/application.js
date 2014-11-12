@@ -10,11 +10,11 @@ $(document).ready(function() {
     $.ajax( {type: "POST", url: ("/rants"), data: form.serialize()})
       .success( function() {
         window.location.reload(true);
-      })
-      .error( function() {
-        debugger;
-        arguments
       });
+//      .error( function() {
+//        debugger;
+//        arguments
+//      });
   });
 
 //  Favoriting

@@ -1,12 +1,18 @@
 <div class="dash-wrap">
   <%= render partial: "layouts/rant_console" %>
   <div class="rant-feed">
-      <h1>Latest Rants</h1>
-      <hr/>
-      <%= render @rants %>
+    <h1>Latest Rants</h1>
+    <hr/>
+    <%= render @rants %>
     <br/>
-      <h1>My Rants</h1>
+    <% if @mentions.length > 0  %>
+      <h1>Mentions</h1>
       <hr/>
-      <%= render @user_rants %>
+      <%= render @mentions %>
+      <br/>
+    <% end %>
+    <h1>My Rants</h1>
+    <hr/>
+    <%= render @user_rants %>
   </div>
 </div>

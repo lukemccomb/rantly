@@ -28,11 +28,11 @@ module RantsHelper
 
     private
 
-    def link_hashtags text
+    def link_hashtags(text)
       text.gsub(/#(\w+)/) { |match| link_to(match, hashtag_path($1), class: 'hashtag-link') }
     end
 
-    def fav_or_favs rant
+    def fav_or_favs(rant)
       if rant.favorites.length == 1
         render html:
           "<h5>#{rant.favorites.length} Favorite #{dash_favorite_button(rant)}</h5>".html_safe
