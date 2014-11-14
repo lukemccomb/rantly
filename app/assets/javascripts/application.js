@@ -21,33 +21,48 @@ $(document).ready(function () {
 
 //  Favoriting
 
-  $(".favorite").on('click', function (e) {
-    e.preventDefault();
-    var rant_id = $(this).data("rant-id");
-    var rant = $(this);
-    $.ajax({type: "POST", url: ("/rants/" + rant_id + "/favorites"), data: {rant_id: rant_id}})
-      .success(function (data) {
-        var intCount = parseInt(rant.parentsUntil('.favorite-wrap').children('.fav-count').text());
-        intCount += 1;
-        var fav_wrap = rant.parentsUntil('.favorite-wrap');
-        fav_wrap.children('.fav-count').text(intCount);
-        fav_wrap.children('form').replaceWith(data);
-      });
-  });
-  $(".unfavorite").on('click', function (e) {
-    e.preventDefault();
-    var rant_id = $(this).data("rant-id");
-    var fav_id = $(this).data("id");
-    var rant = $(this);
-    $.ajax({type: "DELETE", url: ("/rants/" + rant_id + "/favorites/" + fav_id), data: { rant_id: rant_id }})
-      .success(function (data) {
-        var intCount = parseInt(rant.parentsUntil('.favorite-wrap').children('.fav-count').text());
-        intCount -= 1;
-        var fav_wrap = rant.parentsUntil('.favorite-wrap');
-        fav_wrap.children('.fav-count').text(intCount);
-        fav_wrap.children('form').replaceWith(data);
-      });
-  });
+  var favorite = function(button) {
+    $(button).on('click', function (e) {
+      e.preventDefault();
+      var rant_id = $(this).data("rant-id");
+      var rant = $(this);
+      $.ajax({type: "POST", url: ("/rants/" + rant_id + "/favorites"), data: {rant_id: rant_id}})
+        .success(function (data) {
+          var intCount = parseInt(rant.parentsUntil('.favorite-wrap').children('.fav-count').text());
+          intCount += 1;
+          var fav_wrap = rant.parentsUntil('.favorite-wrap');
+          fav_wrap.children('.fav-count').text(intCount);
+          fav_wrap.children('form').replaceWith(data);
+          var unfavoriteButton = $(".unfavorite");
+          unfavorite(unfavoriteButton);
+        });
+    });
+  };
+
+  var unfavorite = function(button) {
+    $(button).on('click', function (e) {
+      e.preventDefault();
+      var rant_id = $(this).data("rant-id");
+      var fav_id = $(this).data("id");
+      var rant = $(this);
+      $.ajax({type: "DELETE", url: ("/rants/" + rant_id + "/favorites/" + fav_id), data: {rant_id: rant_id}})
+        .success(function (data) {
+          var intCount = parseInt(rant.parentsUntil('.favorite-wrap').children('.fav-count').text());
+          intCount -= 1;
+          var fav_wrap = rant.parentsUntil('.favorite-wrap');
+          fav_wrap.children('.fav-count').text(intCount);
+          fav_wrap.children('form').replaceWith(data);
+          var favoriteButton = $(".favorite");
+          favorite(favoriteButton);
+        });
+    });
+  };
+
+  var favoriteButton = $(".favorite");
+  var unfavoriteButton = $(".unfavorite");
+
+  favorite(favoriteButton);
+  unfavorite(unfavoriteButton);
 
 //  Following
 

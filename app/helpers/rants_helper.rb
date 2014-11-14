@@ -22,6 +22,8 @@ module RantsHelper
     end
   end
 
+  # change to truncate method
+
   def favorite_button rant
     button_to 'Favorite', rant_favorites_path(rant.id)
   end
