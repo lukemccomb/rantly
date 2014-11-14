@@ -7,11 +7,7 @@
       <div class="user-image">
         <%= image_tag(user.image_url, :class => 'thumb') %>
         <h2><%= user.first_name %></h2><br/>
-        <% if following_user(user.id) %>
-          <%= dash_unfollow_button(user) %>
-        <% else %>
-          <%= dash_follow_button(user) %>
-        <% end %>
+        <%= follow_page_unfollow_button(user) %>
       </div>
     <% end %>
   </div>

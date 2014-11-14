@@ -150,6 +150,19 @@
   }
 }
 
+.unfollow-following-page {
+  background-color: white;
+  color: #0022d1;
+  font-size: 90%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  &:hover {
+    background-color: #0028ff;
+    color: #7cf40e;
+    border: 1px solid #7cf40e;
+  }
+}
+
 .thumb {
   width: 90%;
   float: left;

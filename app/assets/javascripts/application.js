@@ -60,6 +60,9 @@ $(document).ready(function () {
     });
   };
 
+//  make another function for unfavorite button on favorites page
+// to remove rant from page on success of unfav
+
   var favoriteButton = $(".favorite");
   var unfavoriteButton = $(".unfavorite");
 
@@ -73,7 +76,7 @@ $(document).ready(function () {
       e.preventDefault();
       var user_id = $(this).data("user-id");
       var user = $(this);
-      $.ajax({type: "POST", url: ("users/" + user_id + "/follow"), data: {user_id: user_id}})
+      $.ajax({type: "POST", url: ("/users/" + user_id + "/follow"), data: {user_id: user_id}})
         .success(function (data) {
           var userClass = '.follow' + user_id;
           $(userClass).replaceWith(data);
@@ -88,7 +91,7 @@ $(document).ready(function () {
       e.preventDefault();
       var user_id = $(this).data("user-id");
       var user = $(this);
-      $.ajax({type: "POST", url: ("users/" + user_id + "/unfollow"), data: {user_id: user_id}})
+      $.ajax({type: "POST", url: ("/users/" + user_id + "/unfollow"), data: {user_id: user_id}})
         .success(function (data) {
           var userClass = '.unfollow' + user_id;
           $(userClass).replaceWith(data);
@@ -98,10 +101,24 @@ $(document).ready(function () {
     });
   };
 
+  var unfollowFollowingPage = function(button) {
+    $(button).on('click', function (e) {
+      e.preventDefault();
+      var user_id = $(this).data("user-id");
+      var user = $(this);
+      $.ajax({type: "POST", url: ("/users/" + user_id + "/unfollow"), data: {user_id: user_id}})
+        .success(function () {
+          user.parents('.user-image').remove();
+        });
+    });
+  };
+
   var followButton = $(".follow");
   var unfollowButton = $(".unfollow");
+  var FollowPageUnfollowButton = $(".unfollow-following-page");
 
   follow(followButton);
   unfollow(unfollowButton);
+  unfollowFollowingPage(FollowPageUnfollowButton);
 
 });
