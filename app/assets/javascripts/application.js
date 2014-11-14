@@ -4,6 +4,8 @@
 
 $(document).ready(function () {
 
+//  Ranting
+
   $("#rant-button").on('click', function (event) {
     event.preventDefault();
     $('.errors').remove();
@@ -66,20 +68,40 @@ $(document).ready(function () {
 
 //  Following
 
-//  $(".follow").on('click', function(e) {
-//    e.preventDefault();
-//    var user_id = $(this).data("user-id");
-//    $.ajax( {type: "POST", url: ("users/" + user_id + "/follow"), data: {user_id: user_id}})
-//      .always(function() {
-//        window.location.reload(true);
-//      });
-//  });
-//  $(".unfollow").on('click', function(e) {
-//    e.preventDefault();
-//    var user_id = $(this).data("user-id");
-//    $.ajax({type: "DELETE", url: ("users/" + user_id + "/unfollow"), data: {user_id: user_id}})
-//      .always(function() {
-//        window.location.reload(true);
-//      });
-//  });
+  var follow = function(button) {
+    $(button).on('click', function (e) {
+      e.preventDefault();
+      var user_id = $(this).data("user-id");
+      var user = $(this);
+      $.ajax({type: "POST", url: ("users/" + user_id + "/follow"), data: {user_id: user_id}})
+        .success(function (data) {
+          var userClass = '.follow' + user_id;
+          $(userClass).replaceWith(data);
+          var unfollowButton = $(".unfollow");
+          unfollow(unfollowButton);
+        });
+    });
+  };
+
+  var unfollow = function(button) {
+    $(button).on('click', function (e) {
+      e.preventDefault();
+      var user_id = $(this).data("user-id");
+      var user = $(this);
+      $.ajax({type: "POST", url: ("users/" + user_id + "/unfollow"), data: {user_id: user_id}})
+        .success(function (data) {
+          var userClass = '.unfollow' + user_id;
+          $(userClass).replaceWith(data);
+          var followButton = $(".follow");
+          follow(followButton);
+        });
+    });
+  };
+
+  var followButton = $(".follow");
+  var unfollowButton = $(".unfollow");
+
+  follow(followButton);
+  unfollow(unfollowButton);
+
 });
