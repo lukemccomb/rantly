@@ -3,7 +3,7 @@ require 'time'
 class RantsController < ApplicationController
 
   def index
-    @rants = Rant.all.order("created_at DESC")
+    @rants = Rant.order("created_at DESC")
   end
 
   def new
