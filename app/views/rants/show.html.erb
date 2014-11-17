@@ -14,7 +14,7 @@
          href="https://twitter.com/share" data-url="<%= request.url %>" data-text="Interesting Read: <%= @this_rant.title %>">
         Tweet
       </a>
-      <%= button_to "SPAM", rant_path(@this_rant.id), method: :put %>
+      <%= button_to "SPAM", rant_path(@this_rant.id), method: :put, :class => "spam-btn" %>
     </div>
     <hr/>
     <div class="user-image">

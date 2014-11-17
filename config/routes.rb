@@ -25,8 +25,11 @@ Rails.application.routes.draw do
   resources :rants, only: [:index, :create, :destroy, :show, :update] do
     resources :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
+
   end
 
+  post 'find_rants' => 'rants#find_rants'
+  
   get 'spam' => 'spam#show'
 
 end

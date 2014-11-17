@@ -1,3 +1,5 @@
+require 'time'
+
 class RantsController < ApplicationController
 
   def index
@@ -50,10 +52,32 @@ class RantsController < ApplicationController
     end
   end
 
+  def find_rants
+    @rants = Rant.where(:created_at => start_date..end_date)
+    render :index
+  end
+
   private
 
   def allowed_params
     params.require(:rant).permit(:title, :rant)
+  end
+
+  def start_date
+    if params[:start_date]
+      params[:start_date]
+    else
+      []
+    end
+
+  end
+
+  def end_date
+    if params[:end_date]
+      params[:end_date]
+    else
+      []
+    end
   end
 
 end

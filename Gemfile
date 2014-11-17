@@ -32,7 +32,8 @@ gem 'carrierwave'
 gem 'dotenv-rails', '~> 0.11.1'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
+# jQuery datetime picker
+gem 'jquery-datetimepicker-rails'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
