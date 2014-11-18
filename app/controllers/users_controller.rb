@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(allowed_params)
     if @user.save
+      UserMailer.welcome_email(@user)
       redirect_to main_path
       flash[:notice] = "Thank you for registering! Please log in to begin ranting."
     else
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def allowed_params
-    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :rate, :image)
+    params.require(:user).permit(:username, :password, :email, :first_name, :last_name, :bio, :rate, :image)
   end
 
 end

@@ -29,6 +29,15 @@
       width: 80%;
     }
   }
+ .email {
+   width: 100%;
+   display: inline-block;
+   margin-top: 2%;
+
+   input {
+     width: 39%;
+   }
+ }
 }
 
 .bio-field {

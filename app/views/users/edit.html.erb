@@ -16,6 +16,13 @@
           <br/>
           <%= form.password_field :password %>
         </div>
+        <br/>
+        <div class="email">
+          <%= form.label :email %>
+          <%= @user.errors.full_messages_for(:email).first %>
+          <br/>
+          <%= form.email_field :email %>
+        </div>
         <div class="first-n">
           <%= form.label :first_name %>
           <%= @user.errors.full_messages_for(:first_name).first %>
