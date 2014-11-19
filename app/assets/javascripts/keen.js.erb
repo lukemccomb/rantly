@@ -30,6 +30,17 @@ $(document).ready(function(){
       title: "Sign Ups per Day"
     });
 
+    var rants = new Keen.Query("count", {
+      eventCollection: "rants",
+      timeframe: "this_7_days",
+      interval: "daily"
+    });
+
+    client.draw(rants, document.getElementById("chart-wrapper"), {
+      chartType: "columnchart",
+      title: "Rants per Day"
+    });
+
   });
 
 });

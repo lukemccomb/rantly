@@ -17,6 +17,7 @@ class RantsController < ApplicationController
       current_user.followers.each do |follower|
         UserMailer.rant_notifier(follower, "http://luke-rantly.herokuapp.com/rants/#{@rant.id}", current_user).deliver
       end
+      Keen.publish(:rants, { :rant_id => @rant.id, :rant_title => @rant.title })
       flash[:new_rant]
       redirect_to :back
     else

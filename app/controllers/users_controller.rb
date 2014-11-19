@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.confirmation_email(@user).deliver
       UserMailer.welcome_email(@user).deliver
-      Keen.publish(:sign_ups, { :username => user.username, :user_id => user.id })
+      Keen.publish(:sign_ups, { :username => @user.username, :user_id => @user.id })
       redirect_to main_path
       flash[:notice] = "Thank you for registering! Please log in to begin ranting."
     else
