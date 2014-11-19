@@ -1,4 +1,4 @@
-$(document).on('ready', function(){
+$(document).ready(function(){
 
   var client = new Keen({
     projectId: "<%= ENV['KEEN_PROJECT_ID'] %>",
@@ -17,6 +17,17 @@ $(document).on('ready', function(){
     client.draw(logins, document.getElementById("chart-wrapper"), {
       chartType: "columnchart",
       title: "Logins"
+    });
+
+    var signUps = new Keen.Query("count", {
+      eventCollection: "sign_ups",
+      timeframe: "this_4_days",
+      interval: "daily"
+    });
+
+    client.draw(signUps, document.getElementById("chart-wrapper"), {
+      chartType: "columnchart",
+      title: "Sign Ups per Day"
     });
 
   });
