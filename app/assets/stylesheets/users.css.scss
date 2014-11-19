@@ -72,23 +72,22 @@
   border-collapse: collapse;
   text-align: left;
   padding: 2px;
-  width: 30%;
+  width: 50%;
   margin: 2% auto;
   th {
     border-right: 1px solid gray;
-    padding: 5%;
+    padding: 3%;
     font-weight: bold;
     font-size: 110%;
   }
   tr {
     border: 1px solid gray;
-    padding: 5%;
   }
   tr:nth-child(even) {background: #CCC}
   tr:nth-child(odd) {background: #FFF}
   td {
     border: 1px solid gray;
-    padding: 5%;
+    padding: 2%;
   }
 }
 

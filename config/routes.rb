@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :user_comments, only: [:create, :destroy]
   end
 
+  resources :impersonations, only: [:create, :destroy]
+
   resource :search, only: [:new, :show]
   resources :hashtags, only: [:show]
 

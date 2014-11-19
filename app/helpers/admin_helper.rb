@@ -26,6 +26,17 @@ module AdminHelper
     end
   end
 
+  def impersonate(user)
+    button_to "Impersonate", impersonations_path(user_id: user.id), method: :post
+  end
+
+  def impersonation?
+    if session[:impersonate]
+     render :inline => "| <%= link_to 'Revert to Admin', impersonation_path(id: #{session[:user_id]}), method: :delete %>"
+    end
+
+    end
+
   def sorting(asc_or_desc)
     opposite, arrow = if asc_or_desc.nil? || asc_or_desc == "DESC"
                              ["ASC", "☟"]
