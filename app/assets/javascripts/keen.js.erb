@@ -14,7 +14,7 @@ $(document).ready(function(){
       interval: "hourly"
     });
 
-    client.draw(logins, document.getElementById("chart-wrapper"), {
+    client.draw(logins, document.getElementById("logins-chart"), {
       chartType: "columnchart",
       title: "Logins"
     });
@@ -25,7 +25,7 @@ $(document).ready(function(){
       interval: "daily"
     });
 
-    client.draw(signUps, document.getElementById("chart-wrapper"), {
+    client.draw(signUps, document.getElementById("signups-chart"), {
       chartType: "columnchart",
       title: "Sign Ups per Day"
     });
@@ -36,7 +36,7 @@ $(document).ready(function(){
       interval: "daily"
     });
 
-    client.draw(rants, document.getElementById("chart-wrapper"), {
+    client.draw(rants, document.getElementById("rants-chart"), {
       chartType: "columnchart",
       title: "Rants per Day"
     });
