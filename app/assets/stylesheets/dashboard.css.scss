@@ -11,14 +11,7 @@
   }
 }
 
-#logins-chart {
+#signups-chart, #logins-chart, #rants-chart {
   width: 30%;
-}
-#signups-chart {
-  width: 30%;
-
-}
-#rants-chart {
-  width: 30%;
-
+  display: inline-block;
 }
