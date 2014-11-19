@@ -30,6 +30,8 @@ gem 'cloudinary'
 gem 'carrierwave'
 #mail
 gem 'mail'
+# keen.io
+gem 'keen'
 #dot-env
 gem 'dotenv-rails', '~> 0.11.1'
 # bundle exec rake doc:rails generates the API under doc/api.

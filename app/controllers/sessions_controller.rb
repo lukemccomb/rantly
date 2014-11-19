@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
         redirect_to main_path
       else
         sign_in(user)
+        Keen.publish(:logins, { :username => user.username, :user_id => user.id, :timestamp => Time.now })
         redirect_to dashboard_path
       end
     else
