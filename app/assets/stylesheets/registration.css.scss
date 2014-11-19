@@ -92,3 +92,20 @@
     display: inline;
   }
 }
+
+.flash-login {
+  width: 100%;
+  position: fixed;
+  top: 17%;
+  z-index: 2;
+  background-color: green;
+  color: white;
+  padding: 0.5%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 115%;
+  p {
+    text-align: center;
+    display: inline;
+  }
+}

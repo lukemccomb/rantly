@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Thanks for signing up for Rantly! Please confirm your account to log in:</p>
+
+<%= link_to confirmations_url(:token => @token), confirmations_url(:token => @token) %>
+
+<p>
+  Thanks!
+    Rantly
+</p>
+</body>
+</html>

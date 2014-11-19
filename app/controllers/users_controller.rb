@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(allowed_params)
     if @user.save
+      UserMailer.confirmation_email(@user).deliver
       UserMailer.welcome_email(@user).deliver
       redirect_to main_path
       flash[:notice] = "Thank you for registering! Please log in to begin ranting."

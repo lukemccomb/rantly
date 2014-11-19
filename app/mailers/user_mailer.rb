@@ -1,6 +1,11 @@
 class UserMailer < ActionMailer::Base
   default from: "mrrantr@gmail.com"
 
+  def confirmation_email(user)
+    @token = user.confirmation_token
+    mail(:to => user.email, :subject => "Thanks for signing up!")
+  end
+
   def welcome_email(user)
     @user = user
     @url = "http://luke-rantly.herokuapp.com/session/new"

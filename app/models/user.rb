@@ -21,6 +21,16 @@ class User < ActiveRecord::Base
            class_name:  'FollowingRelationship'
   has_many :followers, through: :follower_relationships
 
+  before_create :create_confirmation_token
+
+  def create_confirmation_token
+    self.confirmation_token = SecureRandom.uuid
+  end
+
+  def unconfirmed?
+    confirmation_token != nil
+  end
+
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 155 }
   validates :first_name, presence: true, length: { maximum: 155 }

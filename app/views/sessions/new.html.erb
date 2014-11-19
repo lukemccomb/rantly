@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+  <div class="flash-login">
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
 <div class="login-page">
   <div class="login-window">
       <% @user.errors.full_messages.each do |error| %>

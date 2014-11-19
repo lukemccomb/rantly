@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   end
 
+  get '/confirmations' => 'confirmations#create'
+
   post 'find_rants' => 'rants#find_rants'
 
   get 'spam' => 'spam#show'

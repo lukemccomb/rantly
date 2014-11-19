@@ -13,6 +13,9 @@ class SessionsController < ApplicationController
       elsif disabled_user?(user)
         flash[:notice] = "Your account has been disabled."
         redirect_to main_path
+      elsif user.unconfirmed?
+        flash[:notice] = "Please confirm your account to log in."
+        redirect_to main_path
       else
         sign_in(user)
         redirect_to dashboard_path
