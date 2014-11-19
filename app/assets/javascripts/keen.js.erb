@@ -1,0 +1,24 @@
+$(document).on('ready', function(){
+
+  var client = new Keen({
+    projectId: "<%= ENV['KEEN_PROJECT_ID'] %>",
+    writeKey: "<%= ENV['KEEN_WRITE_KEY'] %>",
+    readKey: "<%= ENV['KEEN_READ_KEY'] %>"
+  });
+
+  Keen.ready(function(){
+
+    var logins = new Keen.Query("count", {
+      eventCollection: "logins",
+      timeframe: "today",
+      interval: "hourly"
+    });
+
+    client.draw(logins, document.getElementById("chart-wrapper"), {
+      chartType: "columnchart",
+      title: "Logins"
+    });
+
+  });
+
+});
