@@ -1,28 +1,35 @@
 <div class="dash-wrap">
   <div class="admin-dash">
     <h1>Rants</h1>
-    <%= link_to "SPAM", spam_path %>
-    <%= form_tag(find_rants_path) do %>
-      <%= text_field_tag "start_date", params[:start_date], class: 'datetimepicker' %>
-      <p> To </p>
-      <%= text_field_tag "end_date", params[:end_date], class: 'datetimepicker' %>
-      <%= submit_tag "Filter", :class => "button" %>
-    <% end %>
-    <table class="user-table">
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Title</th>
-        <th>Actions</th>
-      </tr>
-      <% @rants.each do |rant| %>
-        <tr>
-          <td><%= rant.user.first_name %> <%= rant.user.last_name %></td>
-          <td><%= rant.user.username %></td>
-          <td><%= rant.title %></td>
-          <td><%= link_to "View", rant_path(rant.id) %></td>
-        </tr>
+    <div class="table-wrap">
+      <div class="spam-mail">
+        <%= link_to "SPAM", spam_path %>
+      </div>
+      <div class="date-sort">
+      <%= form_tag(find_rants_path) do %>
+        From
+        <%= text_field_tag "start_date", params[:start_date], class: 'datetimepicker' %>
+        To
+        <%= text_field_tag "end_date", params[:end_date], class: 'datetimepicker' %>
+        <%= submit_tag "Filter", :class => "button" %>
       <% end %>
-    </table>
+      </div>
+      <table class="user-table">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+        <% @rants.each do |rant| %>
+          <tr>
+            <td><%= rant.user.first_name %> <%= rant.user.last_name %></td>
+            <td><%= rant.user.username %></td>
+            <td><%= rant.title %></td>
+            <td><%= link_to "View", rant_path(rant.id) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>

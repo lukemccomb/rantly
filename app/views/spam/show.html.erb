@@ -1,7 +1,19 @@
 <div class="dash-wrap">
   <div class="admin-dash">
     <h1>Rants</h1>
+    <div class="table-wrap">
+      <div class="spam-mail">
     <%= link_to "All Rants", rants_path %>
+      </div>
+      <div class="date-sort">
+        <%= form_tag(find_rants_path) do %>
+          From
+          <%= text_field_tag "start_date", params[:start_date], class: 'datetimepicker' %>
+          To
+          <%= text_field_tag "end_date", params[:end_date], class: 'datetimepicker' %>
+          <%= submit_tag "Filter", :class => "button" %>
+        <% end %>
+      </div>
     <table class="user-table">
       <tr>
         <th>Name</th>
@@ -19,5 +31,6 @@
         </tr>
       <% end %>
     </table>
+  </div>
   </div>
 </div>
