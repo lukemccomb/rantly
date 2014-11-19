@@ -5,7 +5,7 @@ class ConfirmationsController < ApplicationController
 
     user.update!(:confirmation_token => nil)
 
-    flash[:notice] = "Your account has been confirmed. Please log in."
+    flash[:confirm_notice] = "Your account has been confirmed. Please log in."
     redirect_to new_session_path
   end
 
