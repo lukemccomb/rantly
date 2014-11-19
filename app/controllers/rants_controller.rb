@@ -14,6 +14,9 @@ class RantsController < ApplicationController
     @rant = Rant.new(allowed_params)
     @rant.user_id = current_user.id
     if @rant.save
+      current_user.followers.each do |follower|
+        UserMailer.rant_notifier(follower, "http://luke-rantly.herokuapp.com/rants/#{@rant.id}", current_user).deliver
+      end
       flash[:new_rant]
       redirect_to :back
     else

@@ -7,5 +7,11 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "Welcome to Rantly!")
   end
 
+  def rant_notifier(follower, url, user)
+    @user = user
+    @url = url
+    mail(to: follower.email, subject: "#{@user.username} went on a Rant")
+  end
+
 
 end
