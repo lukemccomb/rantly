@@ -8,9 +8,11 @@ class UserMailer < ActionMailer::Base
   end
 
   def rant_notifier(follower, url, user)
-    @user = user
-    @url = url
-    mail(to: follower.email, subject: "#{@user.username} went on a Rant")
+    if follower.email
+      @user = user
+      @url = url
+      mail(to: follower.email, subject: "#{@user.username} went on a Rant")
+    end
   end
 
 
