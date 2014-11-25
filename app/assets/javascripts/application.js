@@ -141,15 +141,13 @@ $(document).ready(function () {
 
 
       input.on('keyup', function () {
+        charCount.empty();
         var rantText = input.val();
         var rantLength = String(140 - rantText.length) + " more characters!";
         charCount.append(rantLength);
         rantLength = null
       });
 
-      input.on('keydown', function () {
-        charCount.empty();
-      });
     });
   };
 
