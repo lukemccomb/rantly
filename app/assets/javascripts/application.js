@@ -25,7 +25,7 @@ $(document).ready(function () {
 
 //  Favoriting
 
-  var favorite = function(button) {
+  var favorite = function (button) {
     $(button).on('click', function (e) {
       e.preventDefault();
       var rant_id = $(this).data("rant-id");
@@ -43,7 +43,7 @@ $(document).ready(function () {
     });
   };
 
-  var unfavorite = function(button) {
+  var unfavorite = function (button) {
     $(button).on('click', function (e) {
       e.preventDefault();
       var rant_id = $(this).data("rant-id");
@@ -73,7 +73,7 @@ $(document).ready(function () {
 
 //  Following
 
-  var follow = function(button) {
+  var follow = function (button) {
     $(button).on('click', function (e) {
       e.preventDefault();
       var user_id = $(this).data("user-id");
@@ -88,7 +88,7 @@ $(document).ready(function () {
     });
   };
 
-  var unfollow = function(button) {
+  var unfollow = function (button) {
     $(button).on('click', function (e) {
       e.preventDefault();
       var user_id = $(this).data("user-id");
@@ -103,7 +103,7 @@ $(document).ready(function () {
     });
   };
 
-  var unfollowFollowingPage = function(button) {
+  var unfollowFollowingPage = function (button) {
     $(button).on('click', function (e) {
       e.preventDefault();
       var user_id = $(this).data("user-id");
@@ -124,10 +124,48 @@ $(document).ready(function () {
   unfollowFollowingPage(FollowPageUnfollowButton);
 
 
-  var datetimepicker = function() {
-    $( ".datetimepicker" ).datetimepicker();
+  var datetimepicker = function () {
+    $(".datetimepicker").datetimepicker();
   };
 
   datetimepicker();
+
+  var label = $('#rant-rant');
+  var countElem = "<span id='char-count'></span>";
+  label.append(countElem);
+  var textArea = $('#rant_rant');
+  var charCount = $('#char-count');
+
+  var charCounter = function (input) {
+    input.on('focus', function () {
+
+
+      input.on('keyup', function () {
+        var rantText = input.val();
+        var rantLength = String(140 - rantText.length) + " more characters!";
+        charCount.append(rantLength);
+        rantLength = null
+      });
+
+      input.on('keydown', function () {
+        charCount.empty();
+      });
+    });
+  };
+
+  var removeCharCounter = function(input) {
+    input.on('blur', function(){
+      charCount.empty();
+    });
+  };
+
+  charCounter(textArea);
+  removeCharCounter(textArea);
+
+//  on mouse enter textarea
+//  on keyup
+//  find length of text area val
+//  add number to label or to div overlaying textarea
+//  call function again within itself maybe?
 
 });

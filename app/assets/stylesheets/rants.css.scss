@@ -23,12 +23,26 @@
   }
 }
 
+#char-count {
+  color: #7cf40e;
+  font-size: 75%;
+  width: auto;
+  float: right;
+  margin-right: 4%;
+}
+
 .rant-form {
   height: 100%;
   text-align: center;
   line-height: 150%;
   #rant_title {
     width: 90%;
+  }
+  label {
+    text-align: left;
+    width: 100%;
+    float: left;
+    margin-left: 4%;
   }
   textarea {
     width: 90%;
