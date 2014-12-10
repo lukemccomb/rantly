@@ -31,25 +31,34 @@ h1 {
   color: white;
   height: 35%;
   z-index: -1;
-  .jeff-thumb {
+  overflow: scroll;
+  .main-thumb {
     float: left;
-    margin: 0 .1% 0 1%;
-    height: 100%;
+    margin: 0 .1% 10% 1%;
+    height: 50%;
     width: 30%;
     display: block;
   }
 
   .index-quote {
     text-align: left;
-    height: 100%;
-    width: 100%;
+    width: 80%;
+    display: block;
+    font-weight: 100;
+    font-size: 95%;
+    line-height: 1.5;
+    a {
+      text-decoration: none;
+      color: #7cf40e;
+    }
     p {
-      display: block;
-      font-weight: 100;
+      font-size: 90%;
+      padding-top: 2.5%;
     }
   }
   img {
-    width: 45%;
+    width: 55%;
+    min-width: 115px;
     border-radius: 10px;
   }
 }
