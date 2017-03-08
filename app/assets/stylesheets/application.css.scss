@@ -35,6 +35,8 @@ body {
 .wrapper {
   margin: 0 auto;
   box-sizing: border-box;
+  text-align: center;
+  position: relative;
 
   &:after {
     visibility: hidden;
@@ -44,6 +46,48 @@ body {
     clear: both;
     height: 0;
   }
+
+  h1 {
+    font-size: 300%;
+  }
+
+  .welcome {
+    width: 100%;
+
+    .rant-title {
+      padding-top: 15%;
+    }
+
+    .tagline {
+      padding-top: 5%;
+      font-size: 120%;
+    }
+  }
+
+  .quotes {
+    background-color: dimgrey;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 5%;
+    color: white;
+    height: 350px;
+
+    .jeff-thumb {
+      float: left;
+      margin: 3% 1% 0 1%;
+    }
+
+    .index-quote {
+      text-align: left;
+    }
+
+    img {
+      width: 35%;
+    }
+  }
+  
+
 }
 
 header {
