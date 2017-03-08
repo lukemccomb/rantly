@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   validates :bio, presence: true, length: { maximum: 255 }
   validates :rate, presence: true
   validates :password, length: { minimum: 8 }, allow_nil: true
-  validates :image, :presence => true
+  # validates :image, :presence => true
 
 
 end
